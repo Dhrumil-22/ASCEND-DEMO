@@ -5,10 +5,12 @@ import os
 # Define input paths (Artifacts)
 summary_path = r"C:\Users\91940\.gemini\antigravity\brain\812cffc3-b5e6-4226-b5fe-010ff63812a3\project_summary.md"
 sitemap_path = r"C:\Users\91940\.gemini\antigravity\brain\812cffc3-b5e6-4226-b5fe-010ff63812a3\ui_sitemap.md"
+features_path = r"C:\Users\91940\.gemini\antigravity\brain\812cffc3-b5e6-4226-b5fe-010ff63812a3\feature_list.md"
 
 # Define output paths (Current Directory)
 summary_out = "ASCEND_Project_Summary.pdf"
 sitemap_out = "ASCEND_UI_Sitemap.pdf"
+features_out = "ASCEND_Feature_List.pdf"
 
 def convert_md_to_pdf(input_path, output_path):
     print(f"Converting {input_path} to {output_path}...")
@@ -58,3 +60,4 @@ def convert_md_to_pdf(input_path, output_path):
 # Run conversions
 convert_md_to_pdf(summary_path, summary_out)
 convert_md_to_pdf(sitemap_path, sitemap_out)
+convert_md_to_pdf(features_path, features_out)

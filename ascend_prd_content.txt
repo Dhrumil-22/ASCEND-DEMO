@@ -1,0 +1,2152 @@
+
+--- Page 1 ---
+궰궱궲궳궴궷궵궶 ASCEND - Product Requirements Document (PRD) 
+ 
+궸궹궺궻 Document Informa Ɵon 
+Field Details 
+Product Name  ASCEND (Alumni –Student Career ENgagement Dashboard)  
+Version 1.0 
+Date January 25, 2026  
+Author Product Team  
+Status DraŌ for Development  
+ConﬁdenƟality Internal Use Only  
+ 
+귚귛규귝귞귟 Table of Contents 
+1. ExecuƟve Summary  
+2. Product Overview  
+3. Goals and Objec Ɵves 
+4. Target Users  
+5. User Personas  
+6. Use Cases and User Stories  
+7. FuncƟonal Requirements  
+8. Non-FuncƟonal Requirements  
+9. System Architecture  
+10. Data Models  
+11. User Interface Speciﬁca Ɵons 
+12. IntegraƟon Requirements  
+13. Success Metrics  
+14. Project Timeline  
+15. Risks and Mi ƟgaƟon 
+--- Page 2 ---
+16. Appendix  
+ 
+1. ExecuƟve Summary  
+1.1 Product Vision 
+ASCEND is a college-speciﬁc alumni- student mentorship pla ƞorm that revolu Ɵonizes career 
+guidance by connec Ɵng junior students with seniors and alumni working at speciﬁc 
+companies. Unlike generic mentorship pla ƞorms, ASCEND enables students to discove r 
+mentors based on their target companies (e.g., Odoo, Google, TCS) and receive hyper-
+targeted, company- speciﬁc career guidance, interview prepara Ɵon, roadmaps, and referral 
+opportuni Ɵes through a structured, asynchronous mentorship model.  
+1.2 Problem Statement 
+Current Challenges:  
+Junior students in higher educa Ɵon insƟtuƟons face signiﬁcant barriers when seeking career 
+guidance from experienced professionals: 
+ Lack of Structured Access:  No centralized pla ƞorm to discover which seniors/alumni 
+work at speciﬁc target companies 
+ Low Response Rates:  Cold messaging on LinkedIn yields <10% response rate; 
+WhatsApp groups are chao Ɵc and unstructured  
+ Generic Advice:  Career counseling is too broad and not tailored to speciﬁc 
+companies or roles 
+ No Accountability:  No way to verify quality of advice or track outcomes 
+ Mentor Burnout:  Alumni get overwhelmed with repe ƟƟve quesƟons and random 
+messages 
+ Missing Company Context:  Students can't ﬁnd insider informa Ɵon about company 
+culture, interview processes, or prepara Ɵon strategies  
+ No Referral Pipeline:  Informal networks make it diﬃcult to request and track 
+referrals 
+Impact: These issues result in ineﬃcient knowledge transfer, poor career decision-making, 
+missed opportuni Ɵes, and underu ƟlizaƟon of valuable alumni networks.  
+1.3 Proposed Solu Ɵon 
+ASCEND addresses these challenges through: 
+--- Page 3 ---
+1. Company-Based Discovery:  Students search mentors by target company, not just 
+skills 
+2. Asynchronous Structured Mentorship:  QuesƟon-answer model (not real- Ɵme chat) 
+with mandatory context ﬁelds 
+3. Fair Queue Management:  FIFO-based distribu Ɵon prevents mentor overload using 
+Data Structures 
+4. Outcome-Based Trust System:  Quality control through delayed feedback on advice 
+eﬀecƟveness 
+5. Intelligent Matching:  Algorithm matches students with most relevant mentors based 
+on company, skills, and availability 
+6. Referral Workﬂow:  Formal pipeline from guidance → por ƞolio building → referral 
+request 
+7. Knowledge Base:  Searchable archive of answered ques Ɵons reduces duplicate 
+queries 
+1.4 Key Diﬀeren Ɵators 
+Aspect TradiƟonal Plaƞorms ASCEND 
+Discovery  By skills/industry  By speciﬁc company  
+Communica Ɵon Real-Ɵme chat/calls  Async structured Q&A  
+Network Global/open  College-speciﬁc (trusted)  
+Quality Control  RaƟngs only Outcome -based trust scores  
+Mentor Load  Uncontrolled  Queue-managed (DSA -based) 
+Company Intel  Generic Aggregated insider insights  
+Referrals Informal Structured workﬂow  
+1.5 Success Criteria 
+6-Month Post-Launch Targets:  
+ User Adop Ɵon: 500+ acƟve students, 100+ veriﬁed alumni  
+ Engagement:  1,000+ ques Ɵons answered, 70%+ mentor response rate  
+ Quality: Average response Ɵme <3 days, student sa ƟsfacƟon >4.2/5  
+ Outcomes:  20+ successful referrals, 10+ job placements a Ʃributed to pla ƞorm 
+--- Page 4 ---
+ Knowledge Base:  500+ searchable Q&A entries reducing duplicate ques Ɵons by 40%  
+ 
+2. Product Overview 
+2.1 Product Descrip Ɵon 
+ASCEND is a web- based pla ƞorm that creates a structured bridge between junior students 
+and college alumni/seniors working at speciﬁc companies. The pla ƞorm enables students to:  
+ Discover which seniors/alumni work at their target companies 
+ Submit structured ques Ɵons about company -speciﬁc career guidance 
+ Receive expert responses from veriﬁed professionals 
+ Access aggregated company intelligence (hiring process, culture, tech stack) 
+ Build porƞolios and request referrals through formal workﬂows  
+ Learn from a searchable archive of previously answered ques Ɵons 
+2.2 Target Market 
+Primary Market:  Engineering colleges and universi Ɵes in India with ac Ɵve alumni networks  
+IniƟal Launch:  DDU (Dharmsinh Desai University) or similar Ɵer-2/Ɵer-3 engineering colleges 
+Expansion Poten Ɵal: 
+ Other departments (MBA, Science, Commerce) 
+ Other colleges in the region 
+ Pan-India engineering college network 
+2.3 Product Type 
+Plaƞorm: Web Applica Ɵon (Responsive)  
+Access: Browser-based (Desktop & Mobile) 
+Deployment:  Cloud-hosted (scalable architecture) 
+Business Model:  Free for students and alumni (college-sponsored or freemium model) 
+2.4 Core Value Proposi Ɵons 
+For Students:  
+ Find mentors at target companies (Odoo, Google, TCS, etc.) 
+ Get company- speciﬁc roadmaps and interview Ɵps 
+--- Page 5 ---
+ Access insider knowledge (culture, hiring, salary ranges) 
+ Build credibility for referral requests 
+ Learn from archived Q&A (knowledge base) 
+For Alumni:  
+ Give back to college community eﬃciently 
+ Build personal brand as mentor/expert 
+ Stay connected with college network 
+ Control mentorship workload (set limits) 
+ PotenƟal recruitment pipeline for their companies  
+For College Administra Ɵon: 
+ Improve student placement rates 
+ Engage alumni network produc Ɵvely 
+ Track mentorship outcomes and success stories 
+ Showcase placement success for accredita Ɵon 
+ Build insƟtuƟonal knowledge repository  
+ 
+3. Goals and Objec Ɵves 
+3.1 Primary Goals 
+Goal 1: Create Structured Alumni- Student Connec Ɵons 
+ Enable discovery of alumni by target company 
+ Facilitate meaningful, context- rich conversa Ɵons 
+ Build trust through veriﬁed proﬁles 
+Goal 2: Deliver High-Quality Career Guidance  
+ Ensure company- speciﬁc, ac Ɵonable advice  
+ Maintain quality through outcome-based feedback 
+ Reduce generic/low-value responses 
+Goal 3: Prevent Mentor Burnout  
+ Implement fair ques Ɵon distribu Ɵon (queue system)  
+--- Page 6 ---
+ Allow mentors to set availability limits 
+ Filter out low- quality/duplicate ques Ɵons 
+Goal 4: Build Ins ƟtuƟonal Knowledge  
+ Create searchable archive of Q&A 
+ Aggregate company intelligence from alumni 
+ Document success stories and placement journeys 
+Goal 5: Facilitate Career Outcomes  
+ Enable structured referral requests 
+ Track student progress toward target companies 
+ Measure placement success a Ʃributed to pla ƞorm 
+3.2 Measurable Objec Ɵves 
+User Acquisi Ɵon (6 months):  
+ Register 500+ students (50% of eligible junior students) 
+ Onboard 100+ veriﬁed alumni (targe Ɵng 20% of recent graduates)  
+ Achieve 70% monthly ac Ɵve user rate among registered students  
+Engagement Metrics:  
+ 1,000+ ques Ɵons submi Ʃed 
+ 70%+ ques Ɵon response rate from mentors  
+ Average response Ɵme <3 days  
+ 40% reduc Ɵon in duplicate ques Ɵons (via knowledge base)  
+Quality Metrics:  
+ Student sa ƟsfacƟon raƟng >4.2/5  
+ Mentor trust score average >75/100 
+ 60%+ of students report "advice was ac Ɵonable" 
+Outcome Metrics:  
+ 20+ successful referral requests processed 
+ 10+ students placed at target companies via pla ƞorm 
+ 5+ success stories documented and approved 
+--- Page 7 ---
+Academic Integra Ɵon: 
+ Demonstrate prac Ɵcal applica Ɵon of 5+ Data Structures and Algorithms  
+ Complete project within single semester Ɵmeline 
+ Achieve modular, scalable codebase for future extensions 
+ 
+4. Target Users 
+4.1 User Segments 
+Primary Users 
+1. Junior Students (Year 1-3)  
+ Demographics:  18-21 years old, undergraduate engineering students 
+ Technical Proﬁciency:  Basic to intermediate (comfortable with web applica Ɵons) 
+ Needs: Career direc Ɵon, interview prepara Ɵon, company insights, skill development 
+roadmaps, referrals 
+ Pain Points:   
+o Don't know which seniors work at target companies 
+o Fear of bothering alumni with cold messages 
+o Receive generic advice that doesn't apply to speciﬁc companies 
+o No structured way to prepare for target company interviews 
+o Lack credibility when reques Ɵng referrals  
+ Goals:  
+o Secure internships/jobs at preferred companies 
+o Build relevant skills eﬃciently 
+o Get insider interview Ɵps 
+o Obtain referrals from trusted sources 
+2. Senior Students & Recent Alumni (0-5 years experience)  
+ Demographics:  21-26 years old, ﬁnal year students or recent graduates 
+ Technical Proﬁciency:  Intermediate to advanced 
+ Needs: Give back to college, build personal brand, stay connected 
+--- Page 8 ---
+ Pain Points:   
+o Get spammed with messages on LinkedIn/WhatsApp 
+o No Ɵme for lengthy phone calls or mee Ɵngs 
+o RepeƟƟve quesƟons drain energy  
+o Can't track impact of their mentorship 
+ Goals:  
+o Help juniors eﬃciently (limited Ɵme commitment)  
+o Maintain college network 
+o Build reputa Ɵon as helpful mentor  
+o PotenƟally idenƟfy recruitment candidates  
+3. Experienced Alumni (5+ years experience)  
+ Demographics:  26-35 years old, mid-level to senior professionals 
+ Technical Proﬁciency:  Advanced 
+ Needs: Mentorship as professional development, legacy building 
+ Pain Points:   
+o Very limited Ɵme availability  
+o Want to help but need structured approach 
+o Diﬃcult to assess which students are serious 
+ Goals:  
+o Mentor select serious students 
+o Share career wisdom eﬃciently 
+o IdenƟfy high-potenƟal candidates for their companies  
+o Build leadership/mentorship por ƞolio 
+Secondary Users 
+4. College Administra Ɵon 
+ Roles: Placement oﬃcers, department heads, deans, alumni rela Ɵons team  
+ Needs: Improve placement rates, alumni engagement, accredita Ɵon metrics  
+ Goals:  
+--- Page 9 ---
+o Track mentorship eﬀec Ɵveness 
+o Showcase alumni network strength 
+o Improve placement sta ƟsƟcs 
+o Maintain quality of interac Ɵons 
+5. PotenƟal Recruiters (Future Scope)  
+ DescripƟon: HR professionals from companies with mul Ɵple alumni  
+ Needs: Access to pre- veƩed talent pipeline  
+ Goals: IdenƟfy candidates recommended by their own employees  
+4.2 User Priori ƟzaƟon 
+MVP Focus (Phase 1):  Junior Students + Recent Alumni (0-3 years) 
+Phase 2 Expansion:  Experienced alumni, admin analy Ɵcs 
+Phase 3: Recruiter access, inter-college network 
+ 
+5. User Personas 
+Persona 1: Eager Junior Student 
+Name: Rohan Shah 
+Age: 20 
+Role: 3rd Year, Computer Engineering Student 
+LocaƟon: Ahmedabad, Gujarat 
+Background:  
+ CGPA: 8.5/10 
+ Skills: Python, basic Django, 100+ LeetCode problems solved 
+ Target Company: Odoo (heard it's great for Python developers) 
+ Career Goal: Backend SDE role at product company 
+FrustraƟons: 
+ "I don't know anyone who works at Odoo from my college" 
+ "LinkedIn cold messages never get replies" 
+ "YouTube videos give generic advice, not company- speciﬁc Ɵps" 
+ "I'm not sure if I'm preparing the right things for Odoo interviews" 
+--- Page 10 ---
+ "I want a referral but I don't have any connec Ɵon" 
+Goals: 
+ Find alumni working at Odoo 
+ Understand Odoo's exact hiring process and tech stack 
+ Get a roadmap to prepare in next 6 months 
+ Build projects that Odoo values 
+ Eventually get a referral 
+Behavioral Traits:  
+ ProacƟve and mo Ɵvated 
+ Willing to follow structured guidance 
+ Prefers wri Ʃen communica Ɵon over calls  
+ AcƟve on technical forums and GitHub  
+ Values ac Ɵonable, speciﬁc advice  
+How ASCEND Helps:  
+ Discovers 8 alumni working at Odoo 
+ Asks structured ques Ɵon about prepara Ɵon roadmap  
+ Receives detailed response from Odoo SDE-2 in 2 days 
+ Follows suggested projects and Ɵmeline 
+ Builds por ƞolio, then requests referral a Ōer 6 months  
+ 
+Persona 2: Busy Alumni Mentor 
+Name: Rahul Patel 
+Age: 25 
+Role: Senior So Ōware Developer at Odoo  
+LocaƟon: Gandhinagar, India 
+Batch: 2020, Computer Engineering 
+Background:  
+ 3 years experience at Odoo 
+ Works with Python, PostgreSQL, Odoo framework 
+--- Page 11 ---
+ Got his job through campus placement 
+ AcƟve on LinkedIn with 5,000+ followers  
+FrustraƟons: 
+ "I get 10-15 LinkedIn messages per week asking 'how to get job at Odoo?'" 
+ "Students ask the same ques Ɵons repeatedly"  
+ "I don't have Ɵme for 30 -minute phone calls with every student" 
+ "Some students disappear a Ōer I spend Ɵme wriƟng detailed advice"  
+ "No way to track if my advice actually helped anyone" 
+Goals: 
+ Help juniors from his college (wants to give back) 
+ Manage mentorship eﬃciently (limited to 2-3 hours/month) 
+ Give meaningful advice, not generic responses 
+ Build reputa Ɵon as helpful mentor  
+ PotenƟally idenƟfy talented candidates for Odoo  
+Behavioral Traits:  
+ Prefers asynchronous communica Ɵon (email/text over calls)  
+ Values well- researched, speciﬁc ques Ɵons 
+ Willing to help serious, prepared students 
+ Appreciates when students follow through on advice 
+ Limited Ɵme but high quality contribu Ɵons 
+How ASCEND Helps:  
+ Sets limit: max 10 ques Ɵons per month  
+ Receives only structured ques Ɵons with context  
+ Responds at his convenience (no real- Ɵme pressure)  
+ Sees impact through outcome feedback ("Your roadmap helped me get interview!") 
+ Builds trust score (94/100) showcasing his exper Ɵse 
+ Filters out low- eﬀort ques Ɵons automa Ɵcally 
+ 
+--- Page 12 ---
+Persona 3: Administrator/Placement Oﬃcer 
+Name: Dr. Neha Mehta 
+Age: 38 
+Role: Training & Placement Oﬃcer 
+InsƟtuƟon: College Engineering Department 
+Background:  
+ 15 years in academia 
+ Responsible for placement rates and industry rela Ɵons 
+ Manages alumni database (3,000+ contacts) 
+ Organizes career guidance sessions 
+FrustraƟons: 
+ "Students don't know which alumni to contact for guidance" 
+ "Alumni engagement is low - most don't respond to college emails" 
+ "We organize talks but a Ʃendance is poor and impact is unclear"  
+ "No way to track which students got help from which alumni" 
+ "Accredita Ɵon requires proof of industry mentorship, but we only have anecdotal 
+evidence" 
+Goals: 
+ Improve placement percentage from 65% to 80% 
+ Engage alumni network produc Ɵvely 
+ Provide structured mentorship to all students 
+ Track and report mentorship metrics for accredita Ɵon 
+ Build insƟtuƟonal knowledge repository  
+How ASCEND Helps:  
+ Central pla ƞorm for all alumni -student interac Ɵons 
+ Dashboard showing engagement metrics (ques Ɵons answered, response rates)  
+ Success stories with data (e.g., "10 students placed via referrals") 
+ Veriﬁed alumni proﬁles (LinkedIn- backed authen ƟcaƟon) 
+ ModeraƟon tools to maintain quality  
+--- Page 13 ---
+ Reports for accredita Ɵon documenta Ɵon 
+ 
+6. Use Cases and User Stories 
+6.1 Core Use Cases 
+Use Case 1: Student Discovers Company-Speciﬁc Mentors 
+Actor: Junior Student (Rohan) 
+PrecondiƟon: Rohan is registered and logged in 
+Trigger: Rohan wants to work at Odoo but doesn't know anyone there 
+Flow: 
+1. Rohan navigates to Company Directory 
+2. Searches for "Odoo" in search bar 
+3. Clicks on Odoo company card 
+4. Views company page showing 8 alumni from his college 
+5. Sees 3 mentors are currently accep Ɵng quesƟons 
+6. Filters by "Currently Working" and "Interview Prepara Ɵon" 
+7. Views Rahul Patel's proﬁle (SDE-2, Trust Score 94/100) 
+8. Clicks "Ask Ques Ɵon" buƩon 
+Postcondi Ɵon: Rohan is redirected to structured ques Ɵon submission form with Odoo and 
+Rahul pre-selected 
+AlternaƟve Flow: 
+ If no alumni work at searched company → System shows "No alumni found at this 
+company. Add to wishlist to be no Ɵﬁed when someone joins."  
+ 
+Use Case 2: Student Submits Structured Ques Ɵon 
+Actor: Junior Student (Rohan) 
+PrecondiƟon: Student is on ques Ɵon submission form  
+Flow: 
+1. System displays form with Odoo and Rahul pre-ﬁlled 
+2. Rohan selects ques Ɵon type: "Career Roadmap"  
+--- Page 14 ---
+3. System auto-ﬁlls his background (Year: 3rd, Branch: CS, Skills: Python, Django) 
+4. Rohan provides context:  
+o Current status: "Completed 100 LC, built 2 Django projects" 
+o Target: "SDE role at Odoo" 
+o Timeline: "Want to apply in 6 months" 
+5. Rohan writes detailed ques Ɵon (500 words):  
+o What should I learn/build speciﬁcally for Odoo? 
+o Is my current prepara Ɵon enough?  
+o Which projects would impress Odoo recruiters? 
+6. AI system checks ques Ɵon quality  
+7. System shows sugges Ɵon: "Similar ques Ɵon answered 2 months ago - View Answer" 
+8. Rohan reviews but his ques Ɵon is more speciﬁc, proceeds  
+9. Rohan aƩaches resume (PDF)  
+10. Reviews preview and submits 
+Postcondi Ɵon: 
+ QuesƟon enters Rahul's queue (posi Ɵon #3) 
+ Rohan receives conﬁrma Ɵon email 
+ Rahul gets no ƟﬁcaƟon: "New ques Ɵon assigned"  
+ QuesƟon status: "Wai Ɵng for response"  
+Business Rules:  
+ Student can ask max 1 ques Ɵon per company per week  
+ Max 4 unanswered ques Ɵons at a Ɵme 
+ QuesƟon must be 100 -2000 characters 
+ AI ﬂags low- quality ques Ɵons for manual review  
+ 
+Use Case 3: Mentor Responds to Ques Ɵon 
+Actor: Alumni Mentor (Rahul) 
+PrecondiƟon: QuesƟon is in Rahul's queue  
+--- Page 15 ---
+Flow: 
+1. Rahul logs in and sees no ƟﬁcaƟon badge (3 pending ques Ɵons) 
+2. Navigates to "My Queue" dashboard 
+3. Sees ques Ɵons sorted by FIFO order  
+4. Clicks on Rohan's ques Ɵon (submi Ʃed 1 day ago)  
+5. Reads full ques Ɵon with context:  
+o Student background 
+o Skills: Python, Django, PostgreSQL 
+o QuesƟon: Roadmap for Odoo prepara Ɵon 
+6. Clicks "Answer Ques Ɵon" 
+7. Uses rich text editor to write comprehensive response (800 words):  
+o Month-by- month prepara Ɵon plan 
+o Speciﬁc skills needed (Python OOP, PostgreSQL advanced queries) 
+o Project sugges Ɵons (build ERP module)  
+o Interview process insights 
+8. AƩaches resource link (Odoo's technical documenta Ɵon) 
+9. Reviews response and submits 
+10. Marks ques Ɵon as "Answered"  
+Postcondi Ɵon: 
+ QuesƟon moves from "In Progress" to "Answered"  
+ Rohan receives email no ƟﬁcaƟon with response  
+ QuesƟon removed from Rahul's ac Ɵve queue (now 2 pending)  
+ System schedules feedback request to Rohan (4 weeks later) 
+AlternaƟve Flow: 
+ If Rahul needs more info → Clicks "Request Clariﬁca Ɵon" → Rohan gets no ƟﬁcaƟon 
+to provide details 
+ If quesƟon is duplicate → Rahul can link to exis Ɵng answer  
+ 
+--- Page 16 ---
+Use Case 4: Student Provides Outcome Feedback 
+Actor: Junior Student (Rohan) 
+PrecondiƟon: 4 weeks have passed since receiving response 
+Flow: 
+1. Rohan receives email: "How was Rahul's advice? Provide feedback" 
+2. Clicks link, redirected to feedback form 
+3. System shows original ques Ɵon and Rahul's response  
+4. Rohan answers:  
+o Was advice relevant? Yes 
+o Did you implement it? Yes, parƟally 
+o What was the result? Improved skills - started building Odoo module project  
+o RaƟng:   (4/5) 
+o Comment: "Very detailed roadmap. Following month 2 now. Already feel 
+more conﬁdent." 
+5. Submits feedback 
+Postcondi Ɵon: 
+ Rahul's trust score increases: 94 → 96/100 
+ Rahul's sta ƟsƟcs updated: +1 helpful response  
+ Feedback visible on Rahul's proﬁle (anonymized) 
+ Rohan can mark ques Ɵon as "Helpful" in knowledge base  
+Business Rules:  
+ Feedback requested 4- 6 weeks a Ōer response  
+ OpƟonal but incen Ɵvized (gamiﬁca Ɵon: "Complete feedback to unlock advanced 
+features") 
+ Outcome- based, not just sa ƟsfacƟon raƟng 
+ 
+Use Case 5: Student Requests Referral 
+Actor: Junior Student (Rohan) 
+--- Page 17 ---
+PrecondiƟon: 
+ Rohan has interacted with Rahul (asked 2 ques Ɵons, both answered)  
+ Rohan has completed prepara Ɵon (6 months passed)  
+ Rohan has built por ƞolio 
+Flow: 
+1. Rohan navigates to Rahul's proﬁle 
+2. Clicks "Request Referral" bu Ʃon 
+3. System checks eligibility:  
+o ✓ Has received guidance from Rahul 
+o ✓ Trust score with Rahul > 70/100 
+o ✓ Proﬁle completeness > 80% 
+4. System shows referral request form 
+5. Rohan ﬁlls:  
+o Target Role: "Junior Python Developer at Odoo" 
+o Why you're ready:  
+ "Completed roadmap you suggested 6 months ago" 
+ "Built 2 Odoo modules (Inventory + CRM)" 
+ "Solved 150+ LeetCode problems" 
+ "AƩached por ƞolio and project links"  
+o Resume: (uploads latest version) 
+o Porƞolio links: GitHub, Live Demo  
+6. Rohan submits request 
+Postcondi Ɵon: 
+ Rahul receives no ƟﬁcaƟon: "Referral request from Rohan"  
+ Request status: "Pending Review" 
+ Rohan sees: "Request sent. Rahul will review within 5 days." 
+Rahul's Review Flow:  
+1. Rahul views request with Rohan's por ƞolio 
+--- Page 18 ---
+2. Clicks on GitHub links, reviews projects 
+3. Checks Rohan's progress over 6 months 
+4. Decision op Ɵons:  
+o Approve:  "Will refer you. Here's the process..." 
+o Request Changes:  "Build one more project showing X skill" 
+o Decline: "Not quite ready yet. Focus on Y ﬁrst." 
+5. Rahul approves and provides next steps:  
+o "Apply to Odoo careers page with this job ID" 
+o "MenƟon referral code: RAHUL -REF-2026" 
+o "I'll submit internal referral form" 
+Postcondi Ɵon: 
+ Rohan receives approval no ƟﬁcaƟon 
+ Success story candidate (tracked for placement outcome) 
+ If placed → Rohan can submit success story 
+ 
+6.2 User Stories (Agile Format) 
+Epic 1: User Management 
+US-1.1: As a student, I want to register with my college email so that I can access the 
+mentorship pla ƞorm. 
+Acceptance Criteria:  
+ RegistraƟon form accepts college email domain only  
+ Email veriﬁca Ɵon required before login  
+ Proﬁle crea Ɵon wizard a Ōer ﬁrst login  
+ Account ac Ɵvated within 2 minutes  
+US-1.2: As an alumni, I want to register and get veriﬁed so that I can mentor students from 
+my college. 
+Acceptance Criteria:  
+ Upload veriﬁca Ɵon documents (degree/ID)  
+ LinkedIn proﬁle veriﬁca Ɵon 
+--- Page 19 ---
+ Admin approval required 
+ NoƟﬁcaƟon on approval/rejec Ɵon 
+US-1.3: As a user, I want to login securely so that I can access my personalized dashboard. 
+Acceptance Criteria:  
+ Role-based redirec Ɵon (student/alumni/admin)  
+ "Remember me" op Ɵon 
+ Account lockout a Ōer 5 failed a Ʃempts 
+ Password reset func Ɵonality 
+ 
+Epic 2: Company Discovery 
+US-2.1: As a student, I want to browse companies where alumni work so that I can ﬁnd 
+mentors at my target companies. 
+Acceptance Criteria:  
+ Searchable company directory 
+ Filter by industry, size, loca Ɵon 
+ Company cards show alumni count and ac Ɵve mentors  
+ Click company → View detailed page 
+US-2.2: As a student, I want to view company- speciﬁc informa Ɵon so that I understand hiring 
+process and culture. 
+Acceptance Criteria:  
+ Company page shows interview process 
+ Salary ranges (if available) 
+ Tech stack used 
+ Alumni success stories 
+US-2.3: As a student, I want to ﬁlter alumni by role and availability so that I ﬁnd the most 
+relevant mentor. 
+Acceptance Criteria:  
+ Filter: Current employees vs past 
+ Filter: By role (SDE, Tech Lead, etc.) 
+ Filter: By availability status 
+--- Page 20 ---
+ Sort by trust score, response Ɵme 
+ 
+Epic 3: Ques Ɵon & Answer System  
+US-3.1: As a student, I want to submit structured ques Ɵons so that mentors have context to 
+provide relevant advice. 
+Acceptance Criteria:  
+ Form includes ques Ɵon type selec Ɵon 
+ Auto-ﬁll background from proﬁle 
+ Mandatory context ﬁelds (current status, goals, speciﬁc ques Ɵon) 
+ AI quality checker ﬂags low- quality ques Ɵons 
+ Character limit: 100-2000 words 
+US-3.2: As a mentor, I want to see ques Ɵons in a fair queue so that I can respond in order 
+without being overwhelmed. 
+Acceptance Criteria:  
+ FIFO queue display 
+ Urgent ques Ɵons highlighted (priority queue)  
+ Queue shows posi Ɵon number  
+ Can set max queue size 
+ Auto-pause when queue full 
+US-3.3: As a mentor, I want to respond with rich forma ƫng so that I can provide clear, 
+detailed guidance. 
+Acceptance Criteria:  
+ Rich text editor (bold, italic, lists, code blocks) 
+ AƩach links and resources  
+ Preview before submit 
+ Save draŌ opƟon 
+ Response logged with Ɵmestamp  
+US-3.4: As a student, I want to provide feedback on advice so that mentor quality is 
+maintained. 
+Acceptance Criteria:  
+--- Page 21 ---
+ Feedback requested 4 weeks a Ōer response  
+ Outcome- based ques Ɵons (Did it work? What happened?)  
+ RaƟng scale + comments  
+ Impacts mentor trust score 
+ Feedback visible on mentor proﬁle (anonymized) 
+ 
+Epic 4: Mentor Matching 
+US-4.1: As a student, I want the system to suggest best mentors so that I get matched with 
+most relevant experts. 
+Acceptance Criteria:  
+ Algorithm considers: company match, skill overlap, availability, trust score 
+ Shows top 3 mentor sugges Ɵons 
+ Can manually select from all available mentors 
+ Auto-assign if no selec Ɵon in 24 hours  
+US-4.2: As a mentor, I want to control my availability so that I don't get overwhelmed. 
+Acceptance Criteria:  
+ Set max ques Ɵons per month  
+ Toggle "Accep Ɵng quesƟons" on/oﬀ  
+ Set expected response Ɵme 
+ Pause/resume any Ɵme 
+ 
+Epic 5: Referral System 
+US-5.1: As a student, I want to request referrals formally so that I can ask professionally a Ōer 
+building credibility. 
+Acceptance Criteria:  
+ Eligibility check (interacted with mentor, proﬁle complete) 
+ Referral request form with por ƞolio links 
+ Mentor can approve/decline/request changes 
+ Track referral status 
+--- Page 22 ---
+US-5.2: As a mentor, I want to review referral requests so that I only refer qualiﬁed 
+candidates. 
+Acceptance Criteria:  
+ View student's full por ƞolio 
+ See interac Ɵon history  
+ OpƟons: Approve, Request changes, Decline with reason  
+ Provide next steps if approved 
+ 
+Epic 6: Knowledge Base 
+US-6.1: As a student, I want to search previously answered ques Ɵons so that I can ﬁnd 
+informaƟon without asking duplicates.  
+Acceptance Criteria:  
+ Full-text search across all answered ques Ɵons 
+ Filter by company, topic, date 
+ Sort by relevance, helpfulness 
+ "Was this helpful?" vo Ɵng system  
+US-6.2: As a user, I want to browse common ques Ɵons by company so that I can learn from 
+others' experiences. 
+Acceptance Criteria:  
+ Company page shows top 10 common ques Ɵons 
+ Click → View full Q&A thread 
+ Related ques Ɵons suggested  
+ Can bookmark for later 
+ 
+Epic 7: Analy Ɵcs & Admin  
+US-7.1: As an admin, I want to approve alumni registra Ɵons so that only veriﬁed users can 
+mentor. 
+Acceptance Criteria:  
+ View pending registra Ɵons 
+ Verify LinkedIn proﬁle 
+--- Page 23 ---
+ Approve/reject with reason 
+ Send noƟﬁcaƟon on decision  
+US-7.2: As an admin, I want to moderate ques Ɵons so that quality is maintained.  
+Acceptance Criteria:  
+ View ﬂagged ques Ɵons 
+ Delete spam/inappropriate content 
+ Rollback modera Ɵon (undo using stack)  
+ Ban repeat oﬀenders 
+US-7.3: As an admin, I want to view pla ƞorm analy Ɵcs so that I can track success metrics.  
+Acceptance Criteria:  
+ Dashboard showing: total users, ques Ɵons answered, avg response Ɵme 
+ Charts: Engagement over Ɵme, top companies, mentor leaderboard  
+ Export reports for accredita Ɵon 
+ Success stories count 
+ 
+7. FuncƟonal Requirements  
+7.1 User Authen ƟcaƟon & Authoriza Ɵon 
+FR-1.1: User Registra Ɵon 
+ DescripƟon: System shall allow three types of users to register: Students, Alumni, 
+and Admins 
+ Priority: P0 (CriƟcal) 
+ Inputs: Name, Email, Password, Role-speciﬁc ﬁelds 
+ Processing:   
+o Validate email domain (college-speciﬁc) 
+o Hash password using bcrypt 
+o Generate email veriﬁca Ɵon token 
+o Send veriﬁca Ɵon email 
+ Outputs: User account created, veriﬁca Ɵon email sent  
+ Business Rules:   
+--- Page 24 ---
+o Students: Must use college email (@ddu.ac.in) 
+o Alumni: Can use personal email, requires admin veriﬁca Ɵon 
+o Password: Min 8 chars, 1 uppercase, 1 number, 1 special char 
+ Error Handling:   
+o Duplicate email → Show "Email already registered" 
+o Invalid domain → Show "Use college email" 
+o Weak password → Show speciﬁc requirements 
+FR-1.2: Email Veriﬁca Ɵon 
+ DescripƟon: System shall verify user email before ac ƟvaƟon 
+ Priority: P0 (CriƟcal) 
+ Processing:   
+o User clicks link in veriﬁca Ɵon email 
+o System validates token (24-hour expiry) 
+o AcƟvate account if valid  
+ Outputs: Account ac Ɵvated, redirect to login  
+ Business Rules:   
+o Token expires a Ōer 24 hours  
+o Can resend veriﬁca Ɵon email (max 3 Ɵmes) 
+FR-1.3: Role-Based Access Control  
+ DescripƟon: System shall enforce diﬀerent permissions for Students, Alumni, and 
+Admins 
+ Priority: P0 (CriƟcal) 
+ Access Matrix:  
+Feature Student Alumni Admin 
+Submit Ques Ɵons ✓ ✗ ✗ 
+Answer Ques Ɵons ✗ ✓ ✗ 
+View Company Directory  ✓ ✓ ✓ 
+--- Page 25 ---
+Feature Student Alumni Admin 
+Request Referrals ✓ ✗ ✗ 
+Moderate Content ✗ ✗ ✓ 
+View Analy Ɵcs ✗ Limited ✓ 
+Approve Users ✗ ✗ ✓ 
+ 
+7.2 Proﬁle Management 
+FR-2.1: Student Proﬁle Crea Ɵon 
+ DescripƟon: Students shall create comprehensive proﬁles including skills, projects, 
+and career goals 
+ Priority: P0 (CriƟcal) 
+ Required Fields:   
+o Name, Batch Year, Branch, Roll Number 
+o Skills (min 3 tags) 
+o Career interests 
+o Target companies (max 5) 
+ OpƟonal Fields:   
+o CGPA, Projects, Cer ƟﬁcaƟons, Social links  
+ Processing:   
+o Calculate proﬁle completeness score (0-100%) 
+o Suggest improvements if <70% 
+ Business Rules:   
+o Proﬁle must be >50% complete to submit ﬁrst ques Ɵon 
+o Can update any Ɵme 
+FR-2.2: Alumni Proﬁle & Work History  
+ DescripƟon: Alumni shall maintain professional proﬁles with current and past 
+employment 
+ Priority: P0 (CriƟcal) 
+--- Page 26 ---
+ Required Fields:   
+o Current company, role, loca Ɵon 
+o At least 1 work history entry 
+o ExperƟse tags 
+o Availability se ƫngs 
+ Processing:   
+o Build company-alumni mapping (HashMap for O(1) lookup) 
+o Calculate tenure at each company 
+o Update 
+company sta ƟsƟcs (alumni count)  
+ Business Rules:   
+o Must mark one company as "current" 
+o Can add unlimited past companies 
+o Work history visible to all students 
+FR-2.3: Proﬁle Privacy Se ƫngs 
+ DescripƟon: Users shall control visibility of certain proﬁle ﬁelds 
+ Priority: P1 (Important) 
+ OpƟons:  
+o Students: Hide CGPA from mentors (Yes/No) 
+o Alumni: Show/hide email address 
+o Both: Proﬁle visibility in directory 
+ Default: All ﬁelds visible except email 
+ 
+7.3 Company Directory & Discovery 
+FR-3.1: Company Master Data  
+ DescripƟon: System shall maintain database of companies where alumni work 
+ Priority: P0 (CriƟcal) 
+ Data Fields:   
+--- Page 27 ---
+o Name, Logo, Website, Industry, Company Type 
+o Headquarters, Employee count range 
+o Is acƟvely hiring (Yes/No)  
+ Processing:   
+o Auto-create company when alumni adds work history 
+o Admin can edit/merge duplicate entries 
+o Calculate sta ƟsƟcs: alumni count, avg trust score  
+FR-3.2: Company Search & Filtering  
+ DescripƟon: Students shall search and ﬁlter companies to ﬁnd target companies 
+ Priority: P0 (CriƟcal) 
+ Search: Full-text search on company name 
+ Filters:  
+o Industry (IT Services, Product, Consul Ɵng, Finance)  
+o Company Type (Startup, Mid-size, Large, MNC) 
+o LocaƟon (City/Country)  
+o AcƟvely Hiring (checkbox)  
+ Sort OpƟons:  
+o Most alumni (default) 
+o AlphabeƟcal (A-Z) 
+o Most acƟve mentors  
+o Fastest response Ɵme 
+ Outputs: Paginated list of company cards (20 per page) 
+FR-3.3: Company Detail Page  
+ DescripƟon: System shall display comprehensive company informa Ɵon 
+ Priority: P0 (CriƟcal) 
+ SecƟons:  
+o Header: Logo, name, industry, basic stats 
+o Alumni List: Current and past employees with ﬁlters 
+--- Page 28 ---
+o Company Intelligence: Hiring info, culture, tech stack (if available) 
+o Common Ques Ɵons: Top 10 answered ques Ɵons about this company  
+o Success Stories: Student tes Ɵmonials 
+ InteracƟons:  
+o Click alumni → View proﬁle 
+o Click "Ask Ques Ɵon" → Pre -ﬁll company in form 
+o Bookmark company → Add to student's wishlist 
+ 
+7.4 QuesƟon Submission System  
+FR-4.1: Structured Ques Ɵon Form 
+ DescripƟon: Students shall submit ques Ɵons using mandatory structured format  
+ Priority: P0 (CriƟcal) 
+ Form Fields:   
+o Target Company (dropdown, searchable) 
+o Preferred Mentor (op Ɵonal, shows top 3 sugges Ɵons) 
+o QuesƟon Type (dropdown): Interview Prep, Roadmap, Culture, Salary, 
+Resume Review, Referral, General 
+o Background Context (auto-ﬁlled from proﬁle, editable) 
+o Current Status (text, 100-500 chars): What have you done so far? 
+o Speciﬁc Ques Ɵon (text, 500 -2000 chars): What exactly do you need help 
+with? 
+o Urgency Level (Normal, High, Urgent) 
+o AƩachments (op Ɵonal): Resume PDF, project links  
+ Processing:   
+o AI quality checker analyzes ques Ɵon 
+o Check for duplicates in knowledge base 
+o Suggest similar answered ques Ɵons 
+o Validate all mandatory ﬁelds 
+ Outputs: QuesƟon submiƩed to mentor's queue  
+--- Page 29 ---
+ Business Rules:   
+o Student can ask max 1 ques Ɵon per company per week  
+o Max 4 unanswered ques Ɵons at a Ɵme 
+o Cannot submit if proﬁle <50% complete 
+o High/Urgent ques Ɵons require jus ƟﬁcaƟon 
+FR-4.2: Duplicate Detec Ɵon 
+ DescripƟon: System shall detect and ﬂag poten Ɵal duplicate ques Ɵons 
+ Priority: P1 (Important) 
+ Processing:   
+o Use TF-IDF or cosine similarity on ques Ɵon text 
+o Compare against answered ques Ɵons for same company  
+o If similarity >70% → Show "Similar ques Ɵon found"  
+ Outputs:  
+o List of similar ques Ɵons with links  
+o OpƟon: "My ques Ɵon is diﬀerent" to proceed  
+ Business Rules:   
+o Doesn't block submission, only suggests 
+o Admin can merge duplicates later 
+FR-4.3: AI Quality Checker  
+ DescripƟon: System shall analyze ques Ɵon quality before submission  
+ Priority: P1 (Important) 
+ Checks:  
+o Length: 100-2000 characters 
+o Speciﬁcity: Contains speciﬁc company/role/tech keywords 
+o Clarity: Not too vague ("plz help", "urgent") 
+o Context: Has suﬃcient background informa Ɵon 
+ Outputs:  
+o Green: "Good ques Ɵon quality"  
+--- Page 30 ---
+o Yellow: "Consider adding more context" 
+o Red: "Ques Ɵon is too vague, please revise"  
+ Business Rules:   
+o Red ﬂag → Requires manual admin approval 
+o Yellow → Can submit but warned 
+o Green → Auto-approved 
+ 
+7.5 QuesƟon Queue Management (DSA: FIFO Queue)  
+FR-5.1: Mentor Ques Ɵon Queue  
+ DescripƟon: Each mentor shall have a FIFO queue for fair ques Ɵon distribu Ɵon 
+ Priority: P0 (CriƟcal - Academic Requirement) 
+ Data Structure:  Queue (First-In-First-Out) 
+ Implementa Ɵon:  
+o Use Python collec Ɵons.deque for queue opera Ɵons 
+o Each mentor has individual queue instance 
+o Max queue size conﬁgurable by mentor (default: 10) 
+ OperaƟons:  
+o enqueue(ques Ɵon): Add ques Ɵon to end of queue  
+o dequeue(): Mentor picks next ques Ɵon (from front)  
+o peek(): View next ques Ɵon without removing  
+o size(): Get current queue length 
+o is_full(): Check if queue at capacity 
+ Business Logic:   
+o QuesƟons answered in order received  
+o Cannot skip ques Ɵons (enforces fairness)  
+o If queue full → Redirect to next available mentor 
+ UI Display:   
+o Mentor sees queue posi Ɵon for each ques Ɵon 
+--- Page 31 ---
+o Student sees "Posi Ɵon #3 in queue, es Ɵmated wait: 6 days"  
+FR-5.2: Priority Queue for Urgent Ques Ɵons 
+ DescripƟon: Urgent ques Ɵons shall be processed with higher priority  
+ Priority: P1 (Important - Academic Requirement) 
+ Data Structure:  Min-Heap Priority Queue 
+ Implementa Ɵon:  
+o Use Python heapq module 
+o Priority levels: 1 (Urgent <2 weeks), 2 (High 2-4 weeks), 3 (Normal) 
+ OperaƟons:  
+o push(priority, ques Ɵon): Add with priority value  
+o pop(): Get highest priority ques Ɵon 
+ Business Logic:   
+o Urgent ques Ɵons jump to front of regular queue  
+o Max 20% of ques Ɵons can be urgent (prevent abuse)  
+o Requires jus ƟﬁcaƟon (interview date proof)  
+ Processing:   
+o Check if student has legi Ɵmate urgency  
+o Add to priority queue 
+o NoƟfy mentor immediately (email/SMS)  
+FR-5.3: Load Balancing  
+ DescripƟon: System shall distribute ques Ɵons evenly among available mentors  
+ Priority: P1 (Important) 
+ Algorithm:   
+1. Get all mentors at target company 
+2. Filter by availability status (accep Ɵng quesƟons) 
+3. Sort by queue size (ascending) 
+4. Assign to mentor with smallest queue 
+5. If all full → Add to company waitlist 
+--- Page 32 ---
+ Business Rules:   
+o Student can manually select mentor (overrides auto-assignment) 
+o If manual selec Ɵon and mentor full → Waitlist for that speciﬁc mentor  
+o Auto-assignment considers trust score as Ɵebreaker 
+ 
+7.6 Mentor Matching Algorithm (DSA: HashMap + Sor Ɵng) 
+FR-6.1: Company-Based Matching  
+ DescripƟon: System shall match students with most relevant mentors using scoring 
+algorithm 
+ Priority: P0 (CriƟcal - Academic Requirement) 
+ Data Structure:  HashMap for company-to-mentors mapping 
+ Implementa Ɵon:  
+o Build HashMap: company_id → [list of mentor objects] 
+o O(1) lookup for all mentors at a company 
+o Python dic Ɵonary: {1: [mentor1, mentor2, ...], 2: [...]}  
+ Processing:   
+1. Lookup mentors at target company (O(1) via HashMap) 
+2. Calculate match score for each mentor 
+3. Sort mentors by score (Merge Sort O(n log n)) 
+4. Return top 3 matches 
+ Output: Ranked list of suggested mentors 
+FR-6.2: Mentor Scoring Algorithm  
+ DescripƟon: System shall calculate compa Ɵbility score between student and mentor  
+ Priority: P0 (CriƟcal) 
+ Scoring Factors:  
+Factor Weight CalculaƟon 
+Currently at Company  50 points  +50 if current employee, +30 if past  
+--- Page 33 ---
+Factor Weight CalculaƟon 
+Years at Company  20 points  years × 5, max 20  
+Skill Overlap  20 points  Jaccard similarity × 20  
+Same Branch  10 points  +10 if match, +0 otherwise  
+QuesƟon Type Exper Ɵse 15 points  +15 if mentor's "can help with" includes this  
+Availability  -30 to +10  -30 if >90% full, +10 if <30% full  
+Trust Score  15 points  (trust_score/100) × 15  
+Response Rate  10 points  response_rate × 10  
+Recency 10 points  +10 current, +7 if <1yr, +4 if <2yr  
+ Total Score Range:  0-150 points 
+ Algorithm:  
+FOR each mentor at target_company: 
+    score = 0 
+     
+    # Factor 1: Employment status 
+    IF mentor.current_company == target_company: 
+        score += 50 
+    ELSE IF mentor worked at target_company in past: 
+        score += 30 
+     
+    # Factor 2: Experience at company 
+    tenure_years = calculate_tenure(mentor, target_company) 
+    score += min(tenure_years * 5, 20) 
+     
+    # Factor 3: Skill overlap (Jaccard similarity) 
+    skill_similarity = len(student_skills ∩ mentor_skills) / len(student_skills ∪ mentor_skills) 
+    score += skill_similarity * 20 
+--- Page 34 ---
+     
+    # Factor 4: Same academic background 
+    IF student.branch == mentor.branch: 
+        score += 10 
+     
+    # Factor 5: Exper Ɵse in ques Ɵon type 
+    IF quesƟon_type IN mentor.can_help_with:  
+        score += 15 
+     
+    # Factor 6: Availability (cri Ɵcal) 
+    queue_uƟlizaƟon = mentor.queue_size / mentor.max_queue_size  
+    IF queue_u ƟlizaƟon > 0.9: 
+        score -= 30  # Heavy penalty 
+    ELSE IF queue_u ƟlizaƟon > 0.7: 
+        score -= 15  # Moderate penalty 
+    ELSE IF queue_u ƟlizaƟon < 0.3: 
+        score += 10  # Bonus for available mentors 
+     
+    # Factor 7: Historical performance 
+    score += (mentor.trust_score / 100) * 15 
+    score += mentor.response_rate * 10 
+     
+    # Factor 8: Recency of experience 
+    months_since = months_since_worked_at(mentor, target_company) 
+    IF months_since == 0: 
+        score += 10  # Currently working 
+    ELSE IF months_since < 12: 
+        score += 7 
+--- Page 35 ---
+    ELSE IF months_since < 24: 
+        score += 4 
+     
+    mentor.match_score = score 
+ 
+SORT mentors BY match_score DESC 
+RETURN top 3 mentors 
+FR-6.3: Skill Similarity Calcula Ɵon 
+ DescripƟon: System shall calculate skill overlap using Jaccard similarity 
+ Priority: P1 (Important) 
+ Formula: Similarity = |A ∩ B| / |A ∪ B|  
+o A = Student's skills 
+o B = Mentor's exper Ɵse 
+ Example:   
+o Student skills: {Python, React, PostgreSQL, Django} 
+o Mentor skills: {Python, PostgreSQL, JavaScript, Docker} 
+o IntersecƟon: {Python, PostgreSQL} = 2  
+o Union: {Python, React, PostgreSQL, Django, JavaScript, Docker} = 6 
+o Similarity: 2/6 = 0.33 → Score: 0.33 × 20 = 6.6 points 
+ 
+7.7 Response Management 
+FR-7.1: Mentor Response Interface  
+ DescripƟon: Mentors shall respond to ques Ɵons with rich text forma ƫng 
+ Priority: P0 (CriƟcal) 
+ Features:   
+o Rich text editor (bold, italic, underline, lists, code blocks, links) 
+o AƩach resources (URLs only, no ﬁle uploads in response)  
+o Preview response before submit 
+--- Page 36 ---
+o Save draŌ (auto-save every 30 seconds) 
+o Character limit: 200-5000 characters 
+ Processing:   
+o SaniƟze HTML to prevent XSS a Ʃacks 
+o Parse and render Markdown 
+o Store response with Ɵmestamp  
+o Update ques Ɵon status: "Answered"  
+o Remove from mentor's ac Ɵve queue  
+o NoƟfy student via email  
+ Business Rules:   
+o Mentor can edit response within 24 hours 
+o AŌer 24 hours, edits require admin approval  
+o One follow- up round allowed per ques Ɵon 
+FR-7.2: Follow- Up QuesƟons 
+ DescripƟon: Students shall ask one follow- up quesƟon per thread  
+ Priority: P1 (Important) 
+ Business Logic:   
+o AŌer receiving response, student can click "Ask Follow -Up" 
+o Follow-up limited to 500 characters 
+o Must be related to original ques Ɵon 
+o Mentor gets no ƟﬁcaƟon 
+o Follow-up doesn't count toward weekly ques Ɵon limit 
+ Business Rules:   
+o Max 1 follow- up per ques Ɵon 
+o Follow-up must be submi Ʃed within 30 days of response  
+o Mentor has 3 days to respond to follow-up 
+FR-7.3: Response Time Tracking  
+ DescripƟon: System shall track and display mentor response Ɵmes 
+--- Page 37 ---
+ Priority: P1 (Important) 
+ Metrics Calculated:   
+o Individual ques Ɵon response Ɵme: answered_at - submiƩed_at 
+o Mentor average response Ɵme: mean(all response Ɵmes) 
+o Company average response Ɵme: mean(all mentors at company)  
+ Display:  
+o On mentor proﬁle: "Avg response: 1.8 days" 
+o On company page: "Avg response: 2.3 days" 
+o On quesƟon: "Responded in 2 days"  
+ Business Rules:   
+o Only count business days (exclude weekends) 
+o Response Ɵme >7 days ﬂagged as "slow"  
+o Impacts mentor trust score if consistently slow 
+ 
+7.8 Trust Score System 
+FR-8.1: Outcome-Based Feedback  
+ DescripƟon: Students shall provide feedback on advice eﬀec Ɵveness aŌer 
+implementa Ɵon period  
+ Priority: P0 (CriƟcal) 
+ Timing: Feedback requested 4- 6 weeks a Ōer response received  
+ Feedback Form:   
+o Was the advice relevant to your ques Ɵon? (Yes/No)  
+o Did you implement the advice? (Yes/Par Ɵally/No/Too early to tell)  
+o What was the outcome?  
+ Got job/internship oﬀer (  ) 
+ Interview calls increased (  ) 
+ Skills improved signiﬁcantly (  ) 
+ Somewhat helpful ( ) 
+--- Page 38 ---
+ Not helpful ( ) 
+o AddiƟonal comments (op Ɵonal, 500 chars max)  
+ Processing:   
+o Calculate points based on outcome 
+o Update mentor's trust score 
+o Add to mentor's sta ƟsƟcs 
+ Business Rules:   
+o Feedback is op Ɵonal but incen Ɵvized 
+o Late feedback (>90 days) has reduced weight 
+o Can update feedback if outcome changes 
+FR-8.2: Trust Score Calcula Ɵon 
+ DescripƟon: System shall calculate mentor trust score based on feedback 
+ Priority: P0 (CriƟcal) 
+ Formula: 
+Trust Score = Weighted Average of Outcomes 
+ 
+Outcome Points: 
+- Got job/internship: +10 points 
+- Interview calls increased: +7 points 
+- Skills improved: +5 points 
+- Advice was relevant: +2 points 
+- Somewhat helpful: +1 point 
+- Not helpful: -3 points 
+- No response given (unanswered): -10 points 
+ 
+Trust Score = (Total Points / Total Responses) * 10 
+Normalized to 0-100 scale 
+ 
+--- Page 39 ---
+IniƟal Trust Score: 50/100 (neutral, for new mentors)  
+ AddiƟonal Factors:   
+o Response rate: (answered / assigned) × 20% bonus 
+o Timeliness: Average response Ɵme <3 days → +5 points  
+o Consistency: >10 responses without nega Ɵve feedback → +5 points  
+ Display:  
+o Mentor proﬁle: "Trust Score: 94/100  " 
+o Color coding:  
+ 90-100: Dark Green (Excellent) 
+ 75-89: Green (Very Good) 
+ 60-74: Yellow (Good) 
+ 40-59: Orange (Average) 
+ <40: Red (Poor) 
+FR-8.3: Trust Score Decay  
+ DescripƟon: Trust scores shall decay over Ɵme for inac Ɵve mentors  
+ Priority: P2 (Nice to have) 
+ Logic:  
+o If mentor hasn't answered ques Ɵons in 6 months → Gradual score reduc Ɵon 
+(-1 point/month) 
+o If mentor goes inac Ɵve (turns oﬀ availability) → Score frozen (no decay)  
+o Purpose: Keep scores relevant to current engagement 
+ Business Rules:   
+o Minimum score a Ōer decay: 40/100  
+o ReacƟvaƟon resets decay  
+ 
+7.9 Referral System 
+FR-9.1: Referral Eligibility Check  
+ DescripƟon: System shall verify student eligibility before allowing referral request 
+--- Page 40 ---
+ Priority: P1 (Important) 
+ Eligibility Criteria:   
+o Has interacted with mentor (at least 1 ques Ɵon answered)  
+o Trust level with mentor >70/100 (based on feedback given) 
+o Proﬁle completeness >80% 
+o Has porƞolio/projects showcased  
+o No pending unanswered ques Ɵons 
+ Processing:   
+o Check all criteria when student clicks "Request Referral" 
+o If not eligible → Show speciﬁc missing requirements 
+o If eligible → Show referral request form 
+ Business Rules:   
+o Can request referral from mentor even if they're not current employee (if 
+worked there recently) 
+o Max 1 acƟve referral request per mentor at a Ɵme 
+o Can request from mul Ɵple mentors for diﬀerent companies  
+FR-9.2: Referral Request Submission  
+ DescripƟon: Students shall submit formal referral requests with por ƞolio 
+ Priority: P1 (Important) 
+ Request Form:   
+o Target Role (text, e.g., "Junior Python Developer") 
+o Why you're ready (text, 500-1000 chars):  
+ PreparaƟon completed  
+ Projects built 
+ Skills acquired 
+o Resume Upload (PDF, max 2MB) 
+o Porƞolio Links (GitHub, LinkedIn, live projects)  
+o AddiƟonal Notes (op Ɵonal) 
+--- Page 41 ---
+ Processing:   
+o Validate all a Ʃachments  
+o Create referral request record 
+o NoƟfy mentor  
+o Set status: "Pending Review" 
+ Outputs:  
+o Student: "Request sent. Mentor will review within 5 business days." 
+o Mentor: Email + in- app noƟﬁcaƟon 
+FR-9.3: Mentor Referral Review  
+ DescripƟon: Mentors shall review and respond to referral requests 
+ Priority: P1 (Important) 
+ Review Interface:   
+o View student's full proﬁle and por ƞolio 
+o See interac Ɵon history (ques Ɵons asked, responses given)  
+o Review projects and resume 
+o Decision op Ɵons:  
+ Approve:  Agree to refer 
+ Request Changes:  Ask for speciﬁc improvements 
+ Decline: Not ready yet, provide construc Ɵve feedback  
+ Approval Flow:   
+o Mentor provides next steps:  
+ "Apply to [Company] careers page with Job ID: XXXX" 
+ "MenƟon referral code: MENTOR -NAME-REF-2026" 
+ "I will submit internal referral form" 
+ Expected Ɵmeline 
+o System tracks referral status 
+o If student gets interview → Update status to "Interview Scheduled" 
+o If student gets oﬀer → Update status to "Oﬀer Received" → Success story 
+--- Page 42 ---
+ Business Rules:   
+o Mentor must respond within 7 days (else auto-declined) 
+o Declined students can reapply a Ōer 3 months  
+o Mentor can revoke referral if student misrepresents informa Ɵon 
+ 
+7.10 Knowledge Base 
+FR-10.1: Q&A Archive  
+ DescripƟon: All answered ques Ɵons shall be searchable in knowledge base  
+ Priority: P1 (Important) 
+ Indexing:   
+o Full-text search on ques Ɵon and answer text  
+o Tag by company, ques Ɵon type, skills men Ɵoned 
+o Auto-generate keywords using TF-IDF 
+ Search Features:   
+o Search by keywords 
+o Filter by company, ques Ɵon type, date range  
+o Sort by relevance, date, helpfulness 
+ Privacy:  
+o Student names anonymized ("Student from 3rd Year CS") 
+o Mentor names visible with consent 
+o SensiƟve informa Ɵon redacted (salary numbers, personal details)  
+FR-10.2: Helpful Vo Ɵng System  
+ DescripƟon: Users shall vote on answer helpfulness 
+ Priority: P2 (Nice to have) 
+ AcƟons:  
+o "Was this helpful?" Yes/No bu Ʃons 
+o Vote count displayed: "47 students found this helpful" 
+o Most helpful answers rise to top in search results 
+--- Page 43 ---
+ Business Rules:   
+o One vote per user per answer 
+o Cannot vote on own ques Ɵons/answers  
+o VoƟng contributes to mentor's trust score  
+FR-10.3: Duplicate Ques Ɵon Linking  
+ DescripƟon: Admins and mentors shall link duplicate ques Ɵons to canonical answers  
+ Priority: P2 (Nice to have) 
+ Process:  
+o When answering, mentor can select "This is duplicate of Ques Ɵon #123" 
+o System redirects future viewers to original answer 
+o Student no Ɵﬁed: "Similar ques Ɵon already answered, see here"  
+ Beneﬁts:  
+o Reduces mentor workload 
+o Builds comprehensive knowledge base 
+o Students ﬁnd answers faster 
+ 
+7.11 Company Intelligence 
+FR-11.1: Alumni Contribu Ɵon System  
+ DescripƟon: Alumni shall contribute insights about their companies 
+ Priority: P1 (Important) 
+ ContribuƟon Form:  
+o Hiring Informa Ɵon: Typical months, common roles, hiring dura Ɵon 
+o Compensa Ɵon: Salary ranges (op Ɵonal, can be anonymized)  
+o Interview Process: Number of rounds, diﬃculty ra Ɵng, topics covered  
+o Culture: Work- life balance, learning opportuni Ɵes, remote policy  
+o Tech Stack: Languages, frameworks, tools used 
+o Best For: Tags describing company strengths 
+ Processing:   
+--- Page 44 ---
+o Aggregate data from mul Ɵple alumni  
+o Calculate averages for numerical ﬁelds 
+o Combine unique items for lists (tech stack, skills required) 
+o Admin reviews before publishing 
+ Business Rules:   
+o Min 3 alumni contribu Ɵons before displaying aggregate data  
+o Salary data always shown as ranges, never exact 
+o Contributors can update their inputs any Ɵme 
+FR-11.2: Interview Process Mapping  
+ DescripƟon: System shall display typical interview process for each company 
+ Priority: P1 (Important) 
+ Display Format:  
+Interview Process for Odoo: 
+├── Round 1: Online Assessment (2 hours) 
+│   Topics: Python fundamentals, SQL queries, DSA (medium level) 
+│    
+├── Round 2: Technical Interview (1 hour) 
+│   Topics: System design (LLD), OOP concepts, Code review 
+│    
+├── Round 3: Project Discussion (45 mins) 
+│   Topics: Past projects, problem-solving approach 
+│    
+└── Round 4: HR & Culture Fit (30 mins) 
+    Topics: Career goals, team ﬁt, salary nego ƟaƟon 
+ 
+Diﬃculty Ra Ɵng: 7/10 
+Avg DuraƟon: Apply → Oﬀer in 4 -6 weeks 
+Success Rate: 15-20% (based on alumni reports) 
+--- Page 45 ---
+FR-11.3: Tech Stack Display  
+ DescripƟon: Show detailed technology stack used at each company 
+ Priority: P1 (Important) 
+ Categorized Display:   
+o Languages: Python, JavaScript, etc. 
+o Frameworks: Django, React, Vue.js 
+o Databases: PostgreSQL, MongoDB, Redis 
+o Tools & Pla ƞorms: Docker, AWS, Git, Jenkins  
+o Domain Knowledge: ERP systems, Cloud Architecture 
+ Use Case:  Students know exactly what to learn for target company 
+ 
+7.12 Admin Panel 
+FR-12.1: Alumni Veriﬁca Ɵon 
+ DescripƟon: Admins shall verify and approve alumni registra Ɵons 
+ Priority: P0 (CriƟcal) 
+ Approval Workﬂow:   
+1. View pending registra Ɵons queue  
+2. For each registra Ɵon:  
+ Review submi Ʃed documents  
+ Verify LinkedIn proﬁle (cross-check company) 
+ Check if company exists in database 
+ Validate batch year and branch 
+3. Decision:  
+ Approve → Send welcome email, ac Ɵvate account  
+ Reject → Provide reason, send rejec Ɵon email 
+ Request More Info → Ask for addi Ɵonal documents  
+ VeriﬁcaƟon Checklist:   
+o ✓ LinkedIn proﬁle matches submi Ʃed informa Ɵon 
+--- Page 46 ---
+o ✓ Current company veriﬁable 
+o ✓ GraduaƟon year matches college records  
+o ✓ Documents are authen Ɵc (not photoshopped)  
+ SLA: Approve/reject within 48 hours 
+FR-12.2: Content Modera Ɵon 
+ DescripƟon: Admins shall moderate ques Ɵons and answers for quality  
+ Priority: P0 (CriƟcal) 
+ ModeraƟon Queue:   
+o AI-ﬂagged ques Ɵons (too vague, spam, inappropriate)  
+o Reported content (users can report viola Ɵons) 
+o First-Ɵme user ques Ɵons (manual review)  
+ AcƟons Available:   
+o Approve → Assign to mentor 
+o Edit → Fix grammar, remove sensi Ɵve info, then approve  
+o Request Revision → Send back to student with feedback 
+o Delete → Remove completely with reason 
+ ModeraƟon Stack (DSA: LIFO):   
+o Admins can "undo" last modera Ɵon acƟon 
+o Stack stores last 10 ac Ɵons 
+o Useful for accidental dele Ɵons 
+o Implementa Ɵon: Python list as stack  
+FR-12.3: Analy Ɵcs Dashboard  
+ DescripƟon: Admins shall view comprehensive pla ƞorm analy Ɵcs 
+ Priority: P1 (Important) 
+ Metrics Displayed:   
+o User Stats:  Total students, alumni, ac Ɵve users, new registra Ɵons (this month)  
+o Engagement:  QuesƟons asked/answered, avg response Ɵme, response rate %  
+o Company Stats:  Top 10 companies by student interest, alumni distribu Ɵon 
+--- Page 47 ---
+o Mentor Performance:  Leaderboard by trust score, most ac Ɵve mentors  
+o Success Metrics:  Referrals requested/approved, placements tracked, success 
+stories 
+o Time-Series Charts:  QuesƟons over Ɵme, response Ɵme trends, user growth  
+ Export Op Ɵons:  
+o Download reports as PDF/Excel 
+o Filters: Date range, company, user type 
+ Use Case:  Reports for college accredita Ɵon, annual reviews, stakeholder 
+presentaƟons 
+FR-12.4: User Management  
+ DescripƟon: Admins shall manage user accounts and permissions 
+ Priority: P1 (Important) 
+ AcƟons:  
+o View all users (students, alumni, admins) 
+o Search/ﬁlter users 
+o Edit user proﬁles (correct errors) 
+o Suspend/ban users (for policy viola Ɵons) 
+o Reset passwords (if user requests) 
+o Promote student to alumni (a Ōer gradua Ɵon) 
+o Assign/revoke admin privileges 
+ Business Rules:   
+o Cannot delete users (only suspend for data integrity) 
+o All acƟons logged for audit trail  
+o Banned users cannot create new accounts with same email 
+ 
+7.13 NoƟﬁcaƟon System  
+FR-13.1: Email No ƟﬁcaƟons 
+ DescripƟon: System shall send email no ƟﬁcaƟons for key events  
+ Priority: P1 (Important) 
+--- Page 48 ---
+ NoƟﬁcaƟon Triggers:  
+Event Recipient  Email Content 
+New Ques Ɵon Assigned  Mentor "New ques Ɵon from [Student] about [Company]" + 
+Link 
+QuesƟon Answered  Student "Your ques Ɵon was answered by [Mentor]" + Preview  
+Feedback Request  Student "[Mentor] responded 4 weeks ago. How did it go?"  
+Referral Request Mentor "[Student] requested referral for [Role]" + Por ƞolio 
+link 
+Referral Status Update Student "Your referral request was [Approved/Declined]" + 
+Details 
+Alumni Applica Ɵon 
+Approved Alumni "Welcome to ASCEND! Your mentor account is 
+acƟve." 
+Account Veriﬁca Ɵon All "Verify your email address" + Veriﬁca Ɵon link 
+Weekly Digest  Mentors "You have [X] pending ques Ɵons" + Summary  
+ Email Features:   
+o HTML templates with branding 
+o Unsubscribe link (op Ɵonal noƟﬁcaƟons only) 
+o CTA buƩons linking back to pla ƞorm 
+o Mobile-responsive design 
+ Business Rules:   
+o CriƟcal noƟﬁcaƟons (account veriﬁca Ɵon, referral updates) cannot be 
+disabled 
+o OpƟonal noƟﬁcaƟons (weekly digest) can be toggled in se ƫngs 
+o Rate limit: Max 5 emails per user per day (prevent spam) 
+FR-13.2: In- App NoƟﬁcaƟons 
+ DescripƟon: Users shall see real- Ɵme noƟﬁcaƟons within applica Ɵon 
+ Priority: P2 (Nice to have) 
+ NoƟﬁcaƟon Bell:  
+--- Page 49 ---
+o Icon in navbar with badge count 
+o Click → Dropdown showing recent no ƟﬁcaƟons 
+o Mark as read/unread 
+o "View All" link to no ƟﬁcaƟons page 
+ NoƟﬁcaƟon Types:   
+o Info: New features, system updates 
+o AcƟon Required: "Respond to ques Ɵon", "Provide feedback"  
+o Success: "Your ques Ɵon was answered"  
+o Warning: "Your proﬁle is incomplete" 
+ Persistence:   
+o Store in database 
+o Show unread count on login 
+o Auto-mark read a Ōer viewing  
+ 
+7.14 Search & Discovery 
+FR-14.1: Global Search  
+ DescripƟon: Users shall search across companies, alumni, and ques Ɵons 
+ Priority: P1 (Important) 
+ Search Scope:   
+o Companies (by name, industry) 
+o Alumni (by name, company, skills) 
+o QuesƟons (by content, tags)  
+ Search Features:   
+o Auto-suggest as user types 
+o Fuzzy matching for typos 
+o Filter results by type (Companies/People/Q&A) 
+o Paginated results 
+ Search Algorithm:   
+--- Page 50 ---
+o Full-text search on indexed ﬁelds 
+o Ranking by relevance (TF-IDF) 
+o Boost exact matches 
+FR-14.2: Alumni Directory  
+ DescripƟon: Students shall browse all veriﬁed alumni 
+ Priority: P2 (Nice to have) 
+ Directory Features:   
+o Grid/List view toggle 
+o Filter by:  
+ Current company 
+ Batch year 
+ Branch 
+ Currently accep Ɵng quesƟons (Yes/No)  
+ Availability status 
+o Sort by:  
+ Name (A-Z) 
+ Trust score (High to Low) 
+ Most acƟve 
+ Recently joined 
+ Alumni Card Display:   
+o Photo, Name, Batch Year 
+o Current company & role 
+o Trust score & ques Ɵons answered  
+o "View Proﬁle" or "Ask Ques Ɵon" buƩon 
+ 
+8. Non-FuncƟonal Requirements  
+8.1 Performance Requirements 
+NFR-1.1: Page Load Time  
+--- Page 51 ---
+ Requirement:  All pages shall load within 2 seconds on 4G connec Ɵon 
+ Measurement:  95th percen Ɵle load Ɵme <2 seconds  
+ CriƟcal Pages:  Company directory, company detail page, student dashboard 
+ OpƟmizaƟon Strategies:   
+o Database query op ƟmizaƟon (indexes on foreign keys)  
+o PaginaƟon (max 20 items per page)  
+o Image lazy loading 
+o Caching frequently accessed data (company list, mentor proﬁles) 
+o Minimize JavaScript bundle size 
+NFR-1.2: Database Query Performance  
+ Requirement:  All database queries shall execute within 100ms 
+ CriƟcal Queries:   
+o Mentor matching algorithm: <500ms 
+o Company search with ﬁlters: <200ms 
+o User authen ƟcaƟon: <50ms  
+ OpƟmizaƟon:  
+o Indexes on: email, company_id, mentor_id, status 
+o Denormalized ﬁelds for sta ƟsƟcs (alumni_count, avg_trust_score)  
+o Query result caching for 5 minutes 
+NFR-1.3: Concurrent Users  
+ Requirement:  System shall support 500 concurrent users without degrada Ɵon 
+ Peak Load:  During placement season (August-December) 
+ Load TesƟng: Use Locust or JMeter to simulate load 
+ Scalability Plan:   
+o Horizontal scaling 
+(mulƟple Flask instances behind load balancer)  
+ Database connec Ɵon pooling  
+ Session management via Redis 
+--- Page 52 ---
+NFR-1.4: API Response Time  
+ Requirement:  REST API endpoints shall respond within 200ms (95th percen Ɵle) 
+ CriƟcal Endpoints:   
+o GET /api/companies/search 
+o GET /api/mentors/match 
+o POST /api/ques Ɵons/submit  
+o GET /api/ques Ɵons/:id 
+ Monitoring:  Log response Ɵmes, alert if >500ms  
+ 
+8.2 Reliability & Availability 
+NFR-2.1: UpƟme 
+ Requirement:  System shall have 99% up Ɵme (excluding planned maintenance)  
+ DownƟme Budget:  Max 7.2 hours/month 
+ Planned Maintenance:  Sundays 2-4 AM IST (low traﬃc) 
+ Monitoring:  Health check endpoint every 60 seconds 
+NFR-2.2: Data Backup  
+ Requirement:  Database shall be backed up daily 
+ Backup Strategy:   
+o Full backup: Daily at 3 AM IST 
+o Incremental backup: Every 6 hours 
+o RetenƟon: 30 days  
+o Storage: Cloud storage (AWS S3 or equivalent) 
+ Recovery:   
+o Recovery Point Objec Ɵve (RPO): 6 hours (max data loss)  
+o Recovery Time Objec Ɵve (RTO): 2 hours (max down Ɵme) 
+NFR-2.3: Error Handling  
+ Requirement:  System shall handle errors gracefully without data loss 
+ Error Types:   
+--- Page 53 ---
+o Client errors (4xx): Show user-friendly message 
+o Server errors (5xx): Log error, show generic message, no Ɵfy admin 
+o Database errors: Retry logic (3 a Ʃempts), fallback to cached data  
+ Logging:  
+o All errors logged with Ɵmestamp, user ID, stack trace  
+o CriƟcal errors trigger email alerts to admin  
+ 
+8.3 Security Requirements 
+NFR-3.1: Authen ƟcaƟon Security  
+ Requirement:  User passwords shall be hashed using industry-standard algorithms 
+ Implementa Ɵon:  
+o Algorithm: bcrypt with salt (cost factor: 12) 
+o Password policy: Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special 
+char 
+o Session Ɵmeout: 24 hours (or on browser close if "Remember Me" not 
+selected) 
+o Account lockout: 5 failed a Ʃempts → 15 -minute cooldown 
+ Session Management:   
+o Use Flask-Login for session handling 
+o CSRF tokens on all forms 
+o Secure cookies (H ƩpOnly, Secure ﬂags in produc Ɵon) 
+NFR-3.2: Data Protec Ɵon 
+ Requirement:  SensiƟve user data shall be protected in transit and at rest  
+ EncrypƟon:  
+o HTTPS enforced in produc Ɵon (TLS 1.2+)  
+o Database encryp Ɵon at rest (if supported by hos Ɵng provider)  
+o Email addresses hashed in logs 
+ Privacy:  
+o Student CGPA hidden if privacy se ƫng enabled  
+--- Page 54 ---
+o Alumni emails not exposed to students (communica Ɵon via pla ƞorm) 
+o Personal data (phone, address) never collected 
+NFR-3.3: SQL Injec Ɵon Preven Ɵon 
+ Requirement:  All database queries shall use parameterized queries (ORM) 
+ Implementa Ɵon:  
+o Use SQLAlchemy ORM exclusively (no raw SQL) 
+o Validate all user inputs 
+o SaniƟze HTML in ques Ɵon/answer text (prevent XSS)  
+ TesƟng: Automated security scans using OWASP ZAP or similar 
+NFR-3.4: Access Control  
+ Requirement:  Users shall only access data they are authorized to view 
+ Enforcement:   
+o Role-based access control (RBAC) 
+o Students cannot view other students' unanswered ques Ɵons 
+o Alumni can only see ques Ɵons assigned to them  
+o Admins have full access with audit logging 
+ Authoriza Ɵon Checks:   
+o Middleware validates user role on every request 
+o API endpoints return 403 Forbidden if unauthorized 
+NFR-3.5: Rate Limi Ɵng 
+ Requirement:  API endpoints shall have rate limits to prevent abuse 
+ Limits:  
+o Login endpoint: 5 a Ʃempts per minute per IP  
+o QuesƟon submission: 1 per hour per student  
+o Search API: 100 requests per hour per user 
+o Email sending: 5 emails per day per user 
+ Implementa Ɵon: Use Flask-Limiter extension 
+ Response:  HTTP 429 Too Many Requests with retry- aŌer header  
+--- Page 55 ---
+ 
+8.4 Usability Requirements 
+NFR-4.1: User Interface  
+ Requirement:  UI shall be intui Ɵve and require minimal training  
+ Design Principles:   
+o Mobile-ﬁrst responsive design (Bootstrap grid) 
+o Consistent naviga Ɵon (navbar present on all pages)  
+o Clear Call-to- AcƟon buƩons (primary ac Ɵon always prominent)  
+o Form valida Ɵon with real -Ɵme feedback  
+o Breadcrumbs for naviga Ɵon context  
+ Accessibility:   
+o WCAG 2.1 Level AA compliance (target) 
+o SemanƟc HTML5 tags  
+o Alt text for all images 
+o Keyboard naviga Ɵon support  
+o Minimum contrast ra Ɵo 4.5:1 
+NFR-4.2: Browser Compa Ɵbility 
+ Requirement:  ApplicaƟon shall work on modern browsers  
+ Supported Browsers:   
+o Chrome 90+ (primary) 
+o Firefox 88+ 
+o Safari 14+ 
+o Edge 90+ 
+ Not Supported:  IE 11 (show depreca Ɵon message)  
+ TesƟng: Cross-browser tes Ɵng using BrowserStack or LambdaTest  
+NFR-4.3: Mobile Responsiveness  
+ Requirement:  All features shall be accessible on mobile devices (viewport 360px+) 
+ Responsive Breakpoints:   
+--- Page 56 ---
+o Mobile: <768px 
+o Tablet: 768px-1024px 
+o Desktop: >1024px 
+ Mobile-Speciﬁc Op ƟmizaƟons:  
+o Touch-friendly bu Ʃons (min 44px tap target)  
+o Collapsible naviga Ɵon menu 
+o OpƟmized images for mobile bandwidth  
+o No horizontal scrolling 
+NFR-4.4: Interna ƟonalizaƟon (Future Scope)  
+ Requirement:  System architecture shall support mul Ɵple languages  
+ Implementa Ɵon:  
+o Separate UI text from code (use i18n library) 
+o Database support for Unicode (UTF-8) 
+o Date/Ɵme forma ƫng based on locale  
+ Phase 1: English only 
+ Phase 2: Add Gujara Ɵ/Hindi 
+ 
+8.5 Maintainability Requirements 
+NFR-5.1: Code Quality  
+ Requirement:  Code shall follow PEP 8 style guide (Python) 
+ Tools:  
+o LinƟng: Pylint, Flake8  
+o Formaƫng: Black (auto -formaƩer) 
+o Type hints: MyPy (sta Ɵc type checking)  
+ Code Reviews:   
+o All code reviewed before merge (peer review or CodeRabbit AI) 
+o Min 80% test coverage required 
+NFR-5.2: Documenta Ɵon 
+--- Page 57 ---
+ Requirement:  All modules and func Ɵons shall be documented  
+ Documenta Ɵon Types:   
+o Inline comments for complex logic 
+o Docstrings for all func Ɵons (Google style)  
+o README.md with setup instruc Ɵons 
+o API documenta Ɵon (Swagger/OpenAPI)  
+o User manual (for students, alumni, admins) 
+ Maintenance:   
+o Documenta Ɵon updated with every feature change  
+o Architecture diagrams (ERD, system design) 
+NFR-5.3: Modularity  
+ Requirement:  System shall be modular for easy feature addi Ɵons 
+ Architecture:   
+o Blueprint- based Flask app (separate modules for auth, companies, ques Ɵons, 
+admin) 
+o Service layer for business logic 
+o Reusable u Ɵlity funcƟons 
+o Conﬁgura Ɵon separate from code (environment variables)  
+ Beneﬁts:  
+o Easy to add new features without breaking exis Ɵng 
+o Can disable features via conﬁg ﬂags 
+o Unit tesƟng simpliﬁed  
+ 
+8.6 Scalability Requirements 
+NFR-6.1: User Growth  
+ Requirement:  System shall scale to support 5,000 users within 2 years 
+ Current Capacity:  500 users (Year 1) 
+ Scaling Strategy:   
+--- Page 58 ---
+o Database: PostgreSQL supports millions of rows 
+o ApplicaƟon: Stateless design allows horizontal scaling  
+o Caching: Redis for session and frequently accessed data 
+o CDN: StaƟc assets served via CDN (images, CSS, JS)  
+NFR-6.2: Data Growth  
+ Requirement:  System shall handle 10,000+ ques Ɵons without performance 
+degradaƟon 
+ Database Design:   
+o Proper indexing on search ﬁelds 
+o Archiving old data (ques Ɵons >2 years old moved to archive table)  
+o PaginaƟon on all list views (prevent loading all records)  
+NFR-6.3: MulƟ-College Support (Future)  
+ Requirement:  Architecture shall support mul Ɵple colleges  
+ Design Considera Ɵons:  
+o Add college_id foreign key to user tables 
+o Data isola Ɵon per college  
+o Shared company database across colleges 
+o College-speciﬁc branding (logo, colors) 
+ Phase 1: Single college (DDU) 
+ Phase 2: MulƟ-tenant architecture 
+ 
+8.7 Compliance & Legal 
+NFR-7.1: Data Privacy  
+ Requirement:  System shall comply with data privacy best prac Ɵces 
+ Implementa Ɵon:  
+o Privacy Policy page (what data collected, how used) 
+o Terms of Service (user responsibili Ɵes) 
+o Cookie consent banner (if analy Ɵcs added)  
+--- Page 59 ---
+o User can request data dele Ɵon (GDPR -inspired) 
+ Data Reten Ɵon:  
+o AcƟve accounts: Indeﬁnite  
+o Deleted accounts: Personal data purged a Ōer 30 days  
+o Anonymous usage data retained for analy Ɵcs 
+NFR-7.2: Content Modera Ɵon 
+ Requirement:  Plaƞorm shall prevent inappropriate content  
+ Policies:  
+o Code of Conduct (respec ƞul communica Ɵon, no harassment)  
+o Prohibited content: Hate speech, spam, plagiarism, false informa Ɵon 
+o ReporƟng mechanism for users to ﬂag viola Ɵons 
+ Enforcement:   
+o AI ﬂagging of inappropriate keywords 
+o Manual admin review 
+o Warning system (1st oﬀense: warning, 2nd: suspension, 3rd: ban) 
+NFR-7.3: Intellectual Property  
+ Requirement:  User-generated content ownership shall be clear 
+ Terms:  
+o Students/Alumni retain ownership of their content 
+o Plaƞorm has license to display/distribute content within pla ƞorm 
+o Users grant permission for anonymized content in knowledge base 
+o No commercial use of content without consent 
+ 
+9. System Architecture 
+9.1 High-Level Architecture 
+Architecture Pa Ʃern: Model-View-Controller (MVC) / Layered Architecture 
+System Components:  
+┌─────────────────────────────────────────────┐ 
+--- Page 60 ---
+│         PRESENTATION LAYER (View)           │ 
+│  ┌──────────────────────────────────────┐   │ 
+│  │  HTML Templates (Jinja2)             │   │ 
+│  │  CSS Styling (Bootstrap + Custom)    │   │ 
+│  │  JavaScript (Vanilla JS for UX)      │   │ 
+│  └──────────────────────────────────────┘   │ 
+└─────────────────── ┬─────────────────────────┘ 
+                    │ HTTP Requests/Responses 
+┌─────────────────── ▼─────────────────────────┐ 
+│       APPLICATION LAYER (Controller)        │ 
+│  ┌──────────────────────────────────────┐   │ 
+│  │  Flask Applica Ɵon (Web Framework)   │   │  
+│  │  ┌────────────────────────────────┐  │   │ 
+│  │  │  Route Blueprints:             │  │   │ 
+│  │  │  - auth_bp (Authen ƟcaƟon)    │  │   │  
+│  │  │  - company_bp (Companies)      │  │   │ 
+│  │  │  - quesƟon_bp (Q&A System)    │  │   │  
+│  │  │  - mentor_bp (Mentor Features) │  │   │ 
+│  │  │  - admin_bp (Admin Panel)      │  │   │ 
+│  │  │  - api_bp (REST API Endpoints) │  │   │ 
+│  │  └────────────────────────────────┘  │   │ 
+│  │  ┌────────────────────────────────┐  │   │ 
+│  │  │  Middleware:                   │  │   │ 
+│  │  │  - AuthenƟcaƟon (Flask-Login)│  │   │ 
+│  │  │  - Authoriza Ɵon (RBAC)        │  │   │  
+│  │  │  - Rate LimiƟng               │  │   │  
+│  │  │  - Error Handling              │  │   │ 
+│  │  └────────────────────────────────┘  │   │ 
+--- Page 61 ---
+│  └──────────────────────────────────────┘   │ 
+└─────────────────── ┬─────────────────────────┘ 
+                    │ FuncƟon Calls 
+┌─────────────────── ▼─────────────────────────┐ 
+│      BUSINESS LOGIC LAYER (Services)        │ 
+│  ┌──────────────────────────────────────┐   │ 
+│  │  Ques ƟonQueueService                │   │  
+│  │  - manage_queue() [FIFO Queue]       │   │ 
+│  │  - enqueue_ques Ɵon()                │   │  
+│  │  - dequeue_for_mentor()              │   │ 
+│  ├────────────────────────────────────── ┤   │ 
+│  │  MentorMatchingService               │   │ 
+│  │  - ﬁnd_best_mentors() [HashMap]     │   │ 
+│  │  - calculate_match_score()           │   │ 
+│  │  - sort_by_score() [Sor Ɵng Algo]    │   │  
+│  ├────────────────────────────────────── ┤   │ 
+│  │  TrustScoreService                   │   │ 
+│  │  - calculate_trust_score()           │   │ 
+│  │  - process_feedback()                │   │ 
+│  ├────────────────────────────────────── ┤   │ 
+│  │  ReferralService                     │   │ 
+│  │  - check_eligibility()               │   │ 
+│  │  - process_referral_request()        │   │ 
+│  ├────────────────────────────────────── ┤   │ 
+│  │  NoƟﬁcaƟonService                 │   │  
+│  │  - send_email()                      │   │ 
+│  │  - create_no ƟﬁcaƟon()             │   │  
+│  ├────────────────────────────────────── ┤   │ 
+--- Page 62 ---
+│  │  CompanyIntelligenceService          │   │ 
+│  │  - aggregate_insights()              │   │ 
+│  │  - update_company_stats()            │   │ 
+│  └──────────────────────────────────────┘   │ 
+└─────────────────── ┬─────────────────────────┘ 
+                    │ ORM Opera Ɵons 
+┌─────────────────── ▼─────────────────────────┐ 
+│         DATA ACCESS LAYER (Model)           │ 
+│  ┌──────────────────────────────────────┐   │ 
+│  │  SQLAlchemy ORM                      │   │ 
+│  │  ┌────────────────────────────────┐  │   │ 
+│  │  │  Models:                       │  │   │ 
+│  │  │  - Student, Alumni, Admin      │  │   │ 
+│  │  │  - Company, WorkHistory        │  │   │ 
+│  │  │  - QuesƟon, Response          │  │   │  
+│  │  │  - TrustScore, Referral        │  │   │ 
+│  │  │  - NoƟﬁcaƟon, CompanyInsight│  │   │  
+│  │  └────────────────────────────────┘  │   │ 
+│  └──────────────────────────────────────┘   │ 
+└─────────────────── ┬─────────────────────────┘ 
+                    │ SQL Queries 
+┌─────────────────── ▼─────────────────────────┐ 
+│          DATABASE (PostgreSQL)              │ 
+│  Tables: users, companies, ques Ɵons,       │  
+│  work_history, responses, trust_scores,     │ 
+│  referrals, no ƟﬁcaƟons, company_insights │  
+└─────────────────────────────────────────────┘ 
+9.2 Technology Stack Summary 
+--- Page 63 ---
+Layer Technology  Purpose 
+Frontend  HTML5 Structure  
+ CSS3 + Bootstrap 5  Styling & Responsive Design  
+ JavaScript (ES6+)  Client-side Interac Ɵvity 
+Backend Python 3.10+  Programming Language  
+ Flask 2.3+  Web Framework  
+ Flask-Login AuthenƟcaƟon & Session Management  
+ Flask-Limiter Rate LimiƟng 
+Database  PostgreSQL 14+  RelaƟonal Database  
+ SQLAlchemy 2.0+  ORM (Object -RelaƟonal Mapping)  
+Email Flask-Mail Email NoƟﬁcaƟons 
+Deployment  Gunicorn WSGI HTTP Server  
+ Nginx Reverse Proxy & Sta Ɵc Files 
+ Docker (op Ɵonal) Containeriza Ɵon 
+HosƟng Railway / Render / Heroku  Cloud Pla ƞorm (development)  
+ AWS / GCP (future)  ProducƟon HosƟng 
+Version Control  Git + GitHub  Code Repository  
+9.3 Data Structures & Algorithms Integra Ɵon 
+Academic Requirement:  Demonstrate prac Ɵcal applica Ɵon of DSA concepts  
+DSA 
+Concept Implementa Ɵon LocaƟon Purpose Complexity 
+Queue 
+(FIFO) services/ques Ɵon_queue_service.py  Fair quesƟon 
+distribuƟon to 
+mentors Enqueue: O(1), 
+Dequeue: O(1) 
+Priority 
+Queue services/urgent_queue_service.py Handle 
+urgent/deadline-
+based ques Ɵons ﬁrst Insert: O(log n), 
+Extract-Min: 
+O(log n) 
+--- Page 64 ---
+DSA 
+Concept Implementa Ɵon LocaƟon Purpose Complexity 
+Stack 
+(LIFO) services/admin_modera Ɵon_service.py  Undo modera Ɵon 
+acƟons (rollback)  Push: O(1), Pop: 
+O(1) 
+HashMap  services/mentor_matching_service.py Company -to-mentors 
+mapping for O(1) 
+lookup Lookup: O(1), 
+Insert: O(1) 
+SorƟng 
+(Merge 
+Sort) services/mentor_matching_service.py Rank mentors by 
+match score O(n log n) 
+String 
+Similarity  uƟls/duplicate_detec Ɵon.py Detect duplicate 
+quesƟons (TF-
+IDF/Cosine) O(n×m) where 
+n,m = string 
+lengths 
+Graph 
+(Future) services/network_visualiza Ɵon.py Alumni network 
+visualizaƟon (Phase 2)  DFS/BFS: 
+O(V+E) 
+DSA Implementa Ɵon Example - Queue: 
+# Conceptual implementa Ɵon (not actual code per PRD format)  
+# File: services/ques Ɵon_queue_service.py  
+ 
+Class: MentorQues ƟonQueue  
+    ProperƟes: 
+        - queue: deque (collec Ɵons.deque for O(1) opera Ɵons) 
+        - max_size: integer (mentor-deﬁned limit) 
+        - mentor_id: integer 
+     
+    Methods: 
+        enqueue(ques Ɵon): 
+            - Check if queue.size() < max_size 
+            - If yes: queue.append(ques Ɵon)  # O(1)  
+            - If no: redirect_to_next_available_mentor() 
+--- Page 65 ---
+         
+        dequeue(): 
+            - Return queue.pople Ō()  # O(1), FIFO order  
+         
+        peek(): 
+            - Return queue[0] without removing 
+         
+        is_full(): 
+            - Return queue.size() >= max_size 
+ 
+10. Data Models 
+10.1 EnƟty RelaƟonship Diagram (Conceptual)  
+Core EnƟƟes: 
+1. User (Student, Alumni, Admin) 
+2. Company 
+3. QuesƟon 
+4. Response 
+5. WorkHistory 
+6. TrustScore 
+7. Referral 
+8. CompanyInsight 
+9. NoƟﬁcaƟon 
+RelaƟonships: 
+ Student [1] ───── [Many] Ques Ɵon 
+ QuesƟon [1] ───── [1] Response  
+ Alumni [1] ───── [Many] Response 
+ Alumni [1] ───── [Many] WorkHistory 
+ Company [1] ───── [Many] WorkHistory 
+--- Page 66 ---
+ QuesƟon [Many] ───── [1] Company  
+ Student [1] ───── [Many] Referral 
+ Alumni [1] ───── [Many] Referral (as reviewer) 
+ Alumni [1] ───── [1] TrustScore 
+ Company [1] ───── [1] CompanyInsight 
+10.2 Key Database Tables (Schema Overview) 
+Table: users  Purpose: Store all user types with role diﬀeren ƟaƟon 
+ id (PK, INT, AUTO_INCREMENT) 
+ email (VARCHAR(120), UNIQUE, NOT NULL) 
+ password_hash (VARCHAR(255), NOT NULL) 
+ name (VARCHAR(100), NOT NULL) 
+ role (ENUM: 'student', 'alumni', 'admin') 
+ is_veriﬁed (BOOLEAN, DEFAULT FALSE) 
+ created_at (TIMESTAMP) 
+Table: students  Purpose: Student- speciﬁc proﬁle informa Ɵon 
+ user_id (PK, FK → users.id) 
+ roll_number (VARCHAR(20), UNIQUE) 
+ batch_year (INT) 
+ branch (VARCHAR(50)) 
+ current_year (INT: 1-4) 
+ cgpa (DECIMAL(3,2), NULL) 
+ show_cgpa (BOOLEAN, DEFAULT TRUE) 
+ proﬁle_completeness (INT, 0-100) 
+ career_goals (TEXT) 
+Table: alumni  Purpose: Alumni mentor proﬁles 
+ user_id (PK, FK → users.id) 
+ batch_year (INT) 
+ branch (VARCHAR(50)) 
+--- Page 67 ---
+ current_company_id (FK → companies.id) 
+ current_role (VARCHAR(100)) 
+ linkedin_url (VARCHAR(200)) 
+ is_accepƟng_quesƟons (BOOLEAN, DEFAULT TRUE)  
+ max_ques Ɵons_per_month (INT, DEFAULT 10)  
+ trust_score (DECIMAL(5,2), DEFAULT 50.0) 
+ total_ques Ɵons_answered (INT, DEFAULT 0)  
+ avg_response_ Ɵme_hours (DECIMAL(5,2))  
+ veriﬁcaƟon_status (ENUM: 'pending', 'approved', 'rejected')  
+Table: companies  Purpose: Company master data 
+ id (PK, INT, AUTO_INCREMENT) 
+ name (VARCHAR(100), UNIQUE, NOT NULL) 
+ website (VARCHAR(255)) 
+ logo_url (VARCHAR(255)) 
+ industry (VARCHAR(50)) 
+ company_type (ENUM: 'Startup', 'Mid-size', 'Large', 'MNC') 
+ headquarters (VARCHAR(100)) 
+ total_alumni_count (INT, DEFAULT 0) # Denormalized 
+ acƟve_mentor_count (INT, DEFAULT 0) # Denormalized  
+ avg_trust_score (DECIMAL(5,2)) # Denormalized 
+Table: work_history  Purpose: Track alumni employment history 
+ id (PK, INT, AUTO_INCREMENT) 
+ alumni_id (FK → alumni.user_id, NOT NULL) 
+ company_id (FK → companies.id, NOT NULL) 
+ role (VARCHAR(100), NOT NULL) 
+ locaƟon (VARCHAR(100))  
+ start_date (DATE, NOT NULL) 
+ end_date (DATE, NULL) # NULL if current 
+--- Page 68 ---
+ is_current (BOOLEAN, DEFAULT FALSE) 
+ tech_stack (JSON) # ["Python", "PostgreSQL"] 
+Table: ques Ɵons Purpose: Student ques Ɵons 
+ id (PK, INT, AUTO_INCREMENT) 
+ student_id (FK → students.user_id, NOT NULL) 
+ company_id (FK → companies.id, NOT NULL) 
+ assigned_mentor_id (FK → alumni.user_id, NULL) 
+ quesƟon_type (ENUM: 'interview_prep', 'roadmap', 'culture', 'salary', 'resume', 
+'referral', 'general') 
+ quesƟon_text (TEXT, NOT NULL)  
+ context_json (JSON) # Student background, current status 
+ urgency (ENUM: 'normal', 'high', 'urgent', DEFAULT 'normal') 
+ status (ENUM: 'pending', 'queued', 'in_progress', 'answered', 'closed') 
+ queue_posi Ɵon (INT, NULL)  
+ submiƩed_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)  
+ answered_at (TIMESTAMP, NULL) 
+Table: responses  Purpose: Mentor answers 
+ id (PK, INT, AUTO_INCREMENT) 
+ quesƟon_id (FK → ques Ɵons.id, UNIQUE, NOT NULL)  
+ mentor_id (FK → alumni.user_id, NOT NULL) 
+ response_text (TEXT, NOT NULL) 
+ resources_json (JSON) # Links, a Ʃachments  
+ responded_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) 
+ last_edited_at (TIMESTAMP, NULL) 
+Table: feedback  Purpose: Outcome-based feedback from students 
+ id (PK, INT, AUTO_INCREMENT) 
+ quesƟon_id (FK → ques Ɵons.id, UNIQUE, NOT NULL)  
+ was_relevant (BOOLEAN) 
+--- Page 69 ---
+ was_implemented (ENUM: 'yes', 'par Ɵally', 'no', 'too_early')  
+ outcome (ENUM: 'got_job', 'interview_calls', 'skills_improved', 'somewhat_helpful', 
+'not_helpful') 
+ raƟng (INT, 1 -5) 
+ comments (TEXT, NULL) 
+ submiƩed_at (TIMESTAMP)  
+Table: trust_scores  Purpose: Calculated trust scores per mentor 
+ mentor_id (PK, FK → alumni.user_id) 
+ current_score (DECIMAL(5,2), DEFAULT 50.0) 
+ total_responses (INT, DEFAULT 0) 
+ posiƟve_outcomes (INT, DEFAULT 0)  
+ negaƟve_outcomes (INT, DEFAULT 0)  
+ response_rate (DECIMAL(3,2)) # 0.00-1.00 
+ last_calculated_at (TIMESTAMP) 
+Table: referrals  Purpose: Student referral requests 
+ id (PK, INT, AUTO_INCREMENT) 
+ student_id (FK → students.user_id, NOT NULL) 
+ mentor_id (FK → alumni.user_id, NOT NULL) 
+ company_id (FK → companies.id, NOT NULL) 
+ target_role (VARCHAR(100)) 
+ porƞolio_links_json (JSON)  
+ resume_url (VARCHAR(255)) 
+ student_message (TEXT) 
+ status (ENUM: 'pending', 'approved', 'declined', 'changes_requested') 
+ mentor_feedback (TEXT, NULL) 
+ created_at (TIMESTAMP) 
+ reviewed_at (TIMESTAMP, NULL) 
+Table: company_insights  Purpose: Aggregated company intelligence 
+--- Page 70 ---
+ company_id (PK, FK → companies.id) 
+ typical_hiring_months (JSON) # ["January", "July"] 
+ avg_hiring_dura Ɵon_days (INT)  
+ fresher_salary_min (INT, NULL) 
+ fresher_salary_max (INT, NULL) 
+ interview_diﬃculty (INT, 1-10) 
+ interview_rounds_json (JSON) # Array of round objects 
+ must_have_skills (JSON) 
+ tech_stack_json (JSON) 
+ work_life_balance_ra Ɵng (DECIMAL(3,2))  
+ remote_policy (ENUM: 'remote', 'hybrid', 'oﬃce') 
+ last_updated (TIMESTAMP) 
+Table: no ƟﬁcaƟons Purpose: In- app noƟﬁcaƟons 
+ id (PK, INT, AUTO_INCREMENT) 
+ user_id (FK → users.id, NOT NULL) 
+ type (ENUM: 'info', 'ac Ɵon_required', 'success', 'warning')  
+ Ɵtle (VARCHAR(200))  
+ message (TEXT) 
+ link_url (VARCHAR(255), NULL) 
+ is_read (BOOLEAN, DEFAULT FALSE) 
+ created_at (TIMESTAMP) 
+Table: student_skills  Purpose: Student skill tags (many-to-many) 
+ id (PK, INT, AUTO_INCREMENT) 
+ student_id (FK → students.user_id) 
+ skill_name (VARCHAR(50)) 
+ proﬁciency (ENUM: 'beginner', 'intermediate', 'advanced') 
+Table: alumni_exper Ɵse Purpose: Alumni exper Ɵse tags (many -to-many) 
+ id (PK, INT, AUTO_INCREMENT) 
+--- Page 71 ---
+ alumni_id (FK → alumni.user_id) 
+ skill_name (VARCHAR(50)) 
+Table: student_target_companies  Purpose: Student's wishlist companies 
+ id (PK, INT, AUTO_INCREMENT) 
+ student_id (FK → students.user_id) 
+ company_id (FK → companies.id) 
+ priority (INT, 1-5) # 1 = highest 
+ added_at (TIMESTAMP) 
+10.3 Indexing Strategy 
+Purpose: OpƟmize query performance for frequent opera Ɵons 
+Indexes to Create:  
+ users(email) - UNIQUE # Fast login lookup 
+ students(roll_number) - UNIQUE 
+ alumni(current_company_id) # Company-alumni ﬁltering 
+ work_history(alumni_id, company_id) # Mentor matching 
+ work_history(company_id) # Company page queries 
+ quesƟons(student_id, status) # Student dashboard  
+ quesƟons(assigned_mentor_id, status) # Mentor queue  
+ quesƟons(company_id, status) # Company Q&A archive  
+ responses(ques Ɵon_id) # O(1) response lookup  
+ noƟﬁcaƟons(user_id, is_read, created_at) # No ƟﬁcaƟon feed 
+10.4 Data Integrity Constraints 
+Foreign Key Constraints:  
+ ON DELETE CASCADE: no ƟﬁcaƟons (when user deleted)  
+ ON DELETE SET NULL: ques Ɵons.assigned_mentor_id (if mentor account deleted)  
+ ON DELETE RESTRICT: work_history.company_id (prevent company dele Ɵon if history 
+exists) 
+Check Constraints:  
+--- Page 72 ---
+ students.cgpa BETWEEN 0.00 AND 10.00 
+ alumni.trust_score BETWEEN 0.00 AND 100.00 
+ quesƟons.urgency IN ('normal', 'high', 'urgent')  
+ feedback.ra Ɵng BETWEEN 1 AND 5  
+Unique Constraints:  
+ (student_id, company_id) in student_target_companies # No duplicate wishlist 
+entries 
+ quesƟon_id in responses # One response per ques Ɵon 
+ quesƟon_id in feedback # One feedback per ques Ɵon 
+ 
+11. User Interface Speciﬁca Ɵons 
+11.1 Design Principles 
+Visual Design:  
+ Color Scheme:   
+o Primary: #2563EB (Blue) - Trust, professionalism 
+o Secondary: #10B981 (Green) - Success, posi Ɵve outcomes  
+o Accent: #F59E0B (Amber) - Highlights, calls-to- acƟon 
+o Neutral: #6B7280 (Gray) - Text, backgrounds 
+o Error: #EF4444 (Red) - Alerts, warnings 
+ Typography:   
+o Headings: Inter or Poppins (Sans-serif, modern) 
+o Body: System fonts (-apple-system, BlinkMacSystemFont, "Segoe UI") 
+o Code: 'Courier New', monospace 
+ Spacing: 8px grid system (8px, 16px, 24px, 32px, 48px) 
+ Border Radius:  8px for cards, 4px for bu Ʃons 
+UX Principles:  
+ Clarity: Clear labels, no jargon 
+ Consistency:  Same UI pa Ʃerns across pages  
+--- Page 73 ---
+ Feedback:  Visual conﬁrma Ɵon for all ac Ɵons 
+ Eﬃciency:  Minimize clicks to complete tasks 
+ Accessibility:  Keyboard naviga Ɵon, screen reader support  
+11.2 Page Layouts 
+11.2.1 Naviga Ɵon Bar (Global)  Present on all pages 
+Desktop Layout: 
+┌────────────────────────────────────────────────────┐ 
+│  [ASCEND Logo]  Companies  Mentors  Knowledge Base │ 
+│                                                    │ 
+│                         [ 껳껱껲 Search] [ 꼈꼉꼊3] [Proﬁle ▼]│ 
+└────────────────────────────────────────────────────┘ 
+ 
+Mobile Layout (<768px): 
+┌────────────────────────────────────────────────────┐ 
+│  [☰]  ASCEND                    [ 꼈꼉꼊3] [Proﬁle ▼]   │ 
+└────────────────────────────────────────────────────┘ 
+  (Collapsible menu on hamburger click) 
+Components: 
+ Logo: Clickable, returns to dashboard 
+ Main Links:  Companies, Mentors (alumni directory), Knowledge Base 
+ Search Bar:  Global search (desktop only, icon on mobile) 
+ NoƟﬁcaƟons: Bell icon with badge count 
+ Proﬁle Dropdown:   
+o My Proﬁle 
+o My QuesƟons (students) / My Queue (mentors)  
+o Seƫngs 
+o Logout 
+**11.2.2 Student 
+--- Page 74 ---
+ 

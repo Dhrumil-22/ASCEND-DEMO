@@ -1,0 +1,111 @@
+
+--- Page 1 ---
+ASCEND – Alumni–Student Career ENgagement Dashboard 
+ 
+Problem Deﬁni Ɵon 
+In many higher- educaƟon insƟtuƟons, junior students lack structured and reliable access to 
+seniors and alumni who have prac Ɵcal industry experience. Exis Ɵng communica Ɵon 
+methods such as social media groups, informal messaging, and no Ɵce boards suﬀe r from 
+several limita Ɵons: 
+ Lack of veriﬁca Ɵon and accountability of career advice  
+ RepeƟƟve and low -quality ques Ɵons 
+ Mentor overload leading to disengagement 
+ Generic guidance that does not match a student’s background 
+ Absence of measurable outcomes to evaluate advice quality 
+These issues result in ineﬃcient knowledge transfer and poor career decision-making among 
+students. 
+ 
+Proposed System 
+The proposed project is a web-based mentorship and career guidance pla ƞorm developed 
+using Python for backend processing  and HTML, CSS, JavaScript, and Bootstrap for 
+frontend design . 
+The system focuses on structured interac Ɵon, fairness, and accountability , rather than real-
+Ɵme chat-based communica Ɵon. Mentorship is delivered asynchronously, ensuring 
+scalability and sustainability. 
+ 
+ObjecƟves 
+1. To provide structured and meaningful career guidance to junior students 
+2. To reduce mentor workload through controlled and fair ques Ɵon handling  
+3. To evaluate mentorship quality using outcome-based feedback 
+4. To apply Data Structures and Algorithms (DSA)  within real system workﬂows 
+5. To design a scalable and modular web applica Ɵon using Python  
+ 
+--- Page 2 ---
+System Features 
+1. User Roles 
+ Junior Student:  Can submit structured career or technical queries 
+ Senior/Alumni Mentor:  Can respond to assigned queries 
+ Administrator:  Manages veriﬁca Ɵon, modera Ɵon, and system integrity  
+ 
+2. Structured Ques Ɵon Submission  
+Juniors must submit queries in a predeﬁned format including: 
+ Current skill set 
+ Target career role 
+ Previous a Ʃempts or prepara Ɵon 
+ Speciﬁc ques Ɵon descrip Ɵon 
+This ensures high-quality inputs and reduces unnecessary mentor eﬀort. 
+ 
+3. Asynchronous Mentorship Model 
+ Real-Ɵme chat is avoided  
+ Mentors respond at their convenience 
+ Improves response quality and system sustainability 
+ 
+4. Outcome-Based Trust System 
+ Juniors provide delayed feedback on guidance received 
+ Trust score is calculated based on measurable outcomes 
+ Prevents misleading or low-quality advice 
+ 
+5. Similarity- Based Mentor Recommenda Ɵon 
+Mentors are suggested based on: 
+ Academic background 
+ Skill level 
+--- Page 3 ---
+ Career trajectory 
+This provides realis Ɵc and relevant guidance.  
+ 
+IntegraƟon of Data Structures and Algorithms  
+To saƟsfy academic and prac Ɵcal requirements, the project integrates DSA into core system 
+logic: 
+Data Structure / 
+Algorithm ApplicaƟon in System  Purpose 
+Queue (FIFO)  Mentor Ques Ɵon 
+Scheduling Ensures fairness and prevents 
+overload 
+Priority Queue  Urgent Career Queries  Handles deadline -based requests  
+Stack (LIFO)  Admin Modera Ɵon 
+Rollback Enables undo func Ɵonality 
+Hash Map  Mentor Matching  Fast lookup and eﬃcient mapping  
+SorƟng Algorithms  ReputaƟon Ranking  Displays top mentors  
+These structures are used as part of the system’s func Ɵonal workﬂow, not as standalone 
+demonstra Ɵons. 
+ 
+Technology Stack 
+Backend 
+ Python 
+ Flask Framework 
+ SQLAlchemy ORM 
+Frontend 
+ HTML 
+ CSS 
+ JavaScript 
+ Bootstrap 
+ 
+--- Page 4 ---
+Database 
+ MySQL / PostgreSQL 
+Architecture 
+ MVC / Layered Architecture 
+ Role-based authen ƟcaƟon 
+ 
+System Feasibility 
+ The project is modular and can be completed within a single semester 
+ Core features are priori Ɵzed for Ɵmely comple Ɵon 
+ Advanced features can be implemented as extensions 
+ Requires no paid APIs or external services 
+ 
+Expected Outcomes 
+ A funcƟonal, secure, and scalable web applica Ɵon 
+ Demonstra Ɵon of Python backend development skills  
+ PracƟcal applica Ɵon of Data Structures and Algorithms  
+ Improved mentorship eﬃciency within an academic environment 
+ 

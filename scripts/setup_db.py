@@ -37,7 +37,7 @@ with app.app_context():
     db.session.commit()
     
     odoo = Company.query.filter_by(name='Odoo').first()
-    mentor1_profile = Alumni(user_id=mentor1_user.id, current_company_id=odoo.id, current_role='Senior SDE', trust_score=94)
+    mentor1_profile = Alumni(user_id=mentor1_user.id, current_company_id=odoo.id, current_role='Senior SDE', trust_score=94, is_verified=True)
     db.session.add(mentor1_profile)
 
     # Mentor 2: Sarah at Google
@@ -47,7 +47,7 @@ with app.app_context():
     db.session.commit()
 
     google = Company.query.filter_by(name='Google').first()
-    mentor2_profile = Alumni(user_id=mentor2_user.id, current_company_id=google.id, current_role='Product Manager', trust_score=98)
+    mentor2_profile = Alumni(user_id=mentor2_user.id, current_company_id=google.id, current_role='Product Manager', trust_score=98, is_verified=True)
     db.session.add(mentor2_profile)
 
     db.session.commit()
@@ -85,4 +85,11 @@ with app.app_context():
     db.session.commit()
     print("Demo Questions added.")
 
-    print("Setup Complete! Login with rohan@college.edu / password123")
+    # 5. Create Admin
+    admin_user = User(name='Admin User', email='admin@ascend.edu', role='admin')
+    admin_user.set_password('admin123')
+    db.session.add(admin_user)
+    db.session.commit()
+    print("Admin added.")
+
+    print("Setup Complete! Login with rohan@college.edu / password123 or admin@ascend.edu / admin123")

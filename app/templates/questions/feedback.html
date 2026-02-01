@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Feedback - ASCEND{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Submit Feedback</h1>
+            <p class="card-subtitle">Help us improve by sharing your experience</p>
+        </div>
+    </div>
+
+    <!-- Question & Response Summary -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">{{ question.title }}</h2>
+            <div class="question-meta mt-2">
+                <span>🏢 {{ question.target_company.name }}</span>
+                <span>👤 Answered by {{ response.mentor.user.name }}</span>
+                <span>📅 {{ response.created_at.strftime('%b %d, %Y') }}</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <p style="white-space: pre-wrap; line-height: 1.8;">{{ response.body[:300] }}{% if response.body|length >
+                300 %}...{% endif %}</p>
+            <a href="{{ url_for('main.view_question', id=question.id) }}" class="btn btn-sm btn-outline mt-2">
+                View Full Response
+            </a>
+        </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Your Feedback</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('main.submit_feedback', id=question.id) }}">
+                <!-- Outcome Selection -->
+                <div class="form-group">
+                    <label class="form-label">What was the outcome? *</label>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="outcome-option">
+                            <input type="radio" name="outcome" value="got_interview" required>
+                            <div class="outcome-card">
+                                <div class="outcome-icon">🎉</div>
+                                <div>
+                                    <strong>Got Interview</strong>
+                                    <p>This advice helped me get an interview!</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="outcome-option">
+                            <input type="radio" name="outcome" value="got_referral" required>
+                            <div class="outcome-card">
+                                <div class="outcome-icon">🤝</div>
+                                <div>
+                                    <strong>Got Referral</strong>
+                                    <p>The mentor provided a referral</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="outcome-option">
+                            <input type="radio" name="outcome" value="helpful" required>
+                            <div class="outcome-card">
+                                <div class="outcome-icon">✅</div>
+                                <div>
+                                    <strong>Very Helpful</strong>
+                                    <p>Great advice, very useful information</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="outcome-option">
+                            <input type="radio" name="outcome" value="not_helpful" required>
+                            <div class="outcome-card">
+                                <div class="outcome-icon">❌</div>
+                                <div>
+                                    <strong>Not Helpful</strong>
+                                    <p>The response didn't address my question</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Star Rating -->
+                <div class="form-group">
+                    <label class="form-label">Rate this response *</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" value="5" id="star5" required>
+                        <label for="star5">⭐</label>
+                        <input type="radio" name="rating" value="4" id="star4">
+                        <label for="star4">⭐</label>
+                        <input type="radio" name="rating" value="3" id="star3">
+                        <label for="star3">⭐</label>
+                        <input type="radio" name="rating" value="2" id="star2">
+                        <label for="star2">⭐</label>
+                        <input type="radio" name="rating" value="1" id="star1">
+                        <label for="star1">⭐</label>
+                    </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="form-group">
+                    <label class="form-label" for="comment">Additional Comments (Optional)</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="4"
+                        placeholder="Share more details about your experience..."></textarea>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        Submit Feedback
+                    </button>
+                    <a href="{{ url_for('main.student_dashboard') }}" class="btn btn-outline">
+                        Skip for Now
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .outcome-option {
+        cursor: pointer;
+        display: block;
+    }
+
+    .outcome-option input[type="radio"] {
+        display: none;
+    }
+
+    .outcome-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-md);
+        transition: var(--transition);
+    }
+
+    .outcome-option input[type="radio"]:checked+.outcome-card {
+        border-color: var(--primary-color);
+        background-color: rgba(79, 70, 229, 0.05);
+    }
+
+    .outcome-card:hover {
+        border-color: var(--primary-light);
+        background-color: var(--bg-secondary);
+    }
+
+    .outcome-icon {
+        font-size: 2rem;
+    }
+
+    .outcome-card strong {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .outcome-card p {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+    }
+
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .star-rating input[type="radio"] {
+        display: none;
+    }
+
+    .star-rating label {
+        cursor: pointer;
+        opacity: 0.3;
+        transition: var(--transition);
+    }
+
+    .star-rating input[type="radio"]:checked~label,
+    .star-rating label:hover,
+    .star-rating label:hover~label {
+        opacity: 1;
+    }
+</style>
+{% endblock %}

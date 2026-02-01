@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Mentor Dashboard - ASCEND{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Welcome, {{ current_user.name }}! 👋</h1>
+            <p class="card-subtitle">Your Mentor Dashboard</p>
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">{{ pending_count }}</div>
+            <div class="stat-label">Pending Questions</div>
+        </div>
+        <div class="stat-card success">
+            <div class="stat-value">{{ answered_count }}</div>
+            <div class="stat-label">Questions Answered</div>
+        </div>
+        <div class="stat-card warning">
+            <div class="stat-value">{{ trust_score }}</div>
+            <div class="stat-label">Trust Score</div>
+        </div>
+        <div class="stat-card info">
+            <div class="stat-value">{{ is_accepting ? 'Active' : 'Paused' }}</div>
+            <div class="stat-label">Status</div>
+        </div>
+    </div>
+
+    <!-- Trust Badge -->
+    <div class="card">
+        <div class="card-body text-center">
+            <h3 class="mb-2">Your Trust Badge</h3>
+            <div class="trust-badge trust-badge-{{ trust_badge|lower }}">
+                <span>⭐</span>
+                <span>{{ trust_badge }} Mentor</span>
+                <span>{{ trust_score }}/100</span>
+            </div>
+            <p class="text-secondary mt-2">Keep helping students to increase your trust score!</p>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Quick Actions</h2>
+        </div>
+        <div class="card-body d-flex gap-2">
+            <a href="{{ url_for('main.mentor_queue') }}" class="btn btn-primary">
+                📋 View Question Queue ({{ pending_count }})
+            </a>
+            <a href="{{ url_for('main.mentor_responses') }}" class="btn btn-secondary">
+                💬 My Responses
+            </a>
+            <a href="{{ url_for('main.mentor_referrals') }}" class="btn btn-outline">
+                🤝 Referral Requests
+            </a>
+            <form action="{{ url_for('main.toggle_availability') }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn {{ 'btn-danger' if is_accepting else 'btn-success' }}">
+                    {{ '⏸️ Pause Questions' if is_accepting else '▶️ Resume Questions' }}
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Recent Activity</h2>
+        </div>
+        <div class="card-body">
+            {% if recent_responses %}
+            <div class="question-list">
+                {% for response in recent_responses %}
+                <div class="question-item">
+                    <div class="question-header">
+                        <div>
+                            <h3 class="question-title">{{ response.question.title }}</h3>
+                            <div class="question-meta">
+                                <span>📅 {{ response.created_at.strftime('%b %d, %Y') }}</span>
+                                <span>🏢 {{ response.question.target_company.name }}</span>
+                                {% if response.feedback %}
+                                <span class="badge badge-success">✅ Feedback Received</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if response.feedback %}
+                        <div class="text-right">
+                            <div
+                                class="badge badge-{{ 'success' if response.feedback.outcome in ['helpful', 'got_interview', 'got_referral'] else 'warning' }}">
+                                {{ response.feedback.outcome|replace('_', ' ')|title }}
+                            </div>
+                            <div class="mt-1">
+                                {% for i in range(response.feedback.rating) %}⭐{% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <p class="question-body">{{ response.body[:150] }}{% if response.body|length > 150 %}...{% endif %}
+                    </p>
+                    <div class="question-footer">
+                        <a href="{{ url_for('main.view_question', id=response.question.id) }}"
+                            class="btn btn-sm btn-outline">View Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-secondary text-center">No responses yet. Start answering questions from the queue!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

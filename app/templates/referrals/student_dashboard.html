@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}My Referral Requests - ASCEND{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">My Referral Requests</h1>
+            <a href="{{ url_for('main.student_dashboard') }}" class="btn btn-sm btn-outline">← Back to Dashboard</a>
+        </div>
+    </div>
+
+    {% if referrals %}
+    <div class="question-list">
+        {% for referral in referrals %}
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-between align-center">
+                    <div>
+                        <h3 class="card-title">{{ referral.company.name }}</h3>
+                        <div class="question-meta">
+                            <span>👤 {{ referral.mentor.user.name }}</span>
+                            <span>📅 Requested {{ referral.requested_at.strftime('%b %d, %Y') }}</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-{{ 
+                            'success' if referral.status == 'approved' else 
+                            ('danger' if referral.status == 'rejected' else 
+                            ('info' if referral.status == 'completed' else 'warning')) 
+                        }}">
+                        {{ referral.status|title }}
+                    </span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="mb-2">Your Message:</h4>
+                <p style="white-space: pre-wrap;">{{ referral.message }}</p>
+
+                {% if referral.mentor_response %}
+                <div class="mt-3 p-3 rounded {{ 'bg-success' if referral.status == 'approved' else 'bg-secondary' }}"
+                    style="background-color: var(--bg-secondary);">
+                    <h5 class="mb-2">Mentor's Response:</h5>
+                    <p class="mb-0" style="white-space: pre-wrap;">{{ referral.mentor_response }}</p>
+                    {% if referral.responded_at %}
+                    <small class="text-secondary">Responded on {{ referral.responded_at.strftime('%b %d, %Y') }}</small>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="card">
+        <div class="card-body text-center p-4">
+            <h3 class="text-secondary">No referral requests yet</h3>
+            <p class="text-secondary mb-3">Connect with mentors and request referrals!</p>
+            <a href="{{ url_for('main.company_list') }}" class="btn btn-primary">
+                Browse Companies
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

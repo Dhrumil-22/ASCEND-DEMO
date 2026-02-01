@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Users</li>
+            </ol>
+        </nav>
+        <h2>User Management</h2>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Info</th>
+                        <th>Role</th>
+                        <th>Details</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>#{{ user.id }}</td>
+                        <td>
+                            <div class="fw-bold">{{ user.name }}</div>
+                            <small class="text-muted">{{ user.email }}</small>
+                        </td>
+                        <td>
+                            {% if user.role == 'student' %}
+                            <span class="badge bg-info text-dark">Student</span>
+                            {% elif user.role == 'alumni' %}
+                            <span class="badge bg-purple text-white" style="background-color: #6f42c1;">Alumni</span>
+                            {% else %}
+                            <span class="badge bg-dark">Admin</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user.role == 'student' and user.student_profile %}
+                            <small>Batch: {{ user.student_profile.batch_year }}</small><br>
+                            <small>{{ user.student_profile.branch }}</small>
+                            {% elif user.role == 'alumni' and user.alumni_profile %}
+                            <div class="d-flex align-items-center">
+                                {% if user.alumni_profile.is_verified %}
+                                <i class="fas fa-check-circle text-success me-1" title="Verified"></i>
+                                {% else %}
+                                <i class="fas fa-exclamation-circle text-warning me-1" title="Unverified"></i>
+                                {% endif %}
+                                <small>{{ user.alumni_profile.current_role }} @ {{ user.alumni_profile.company.name if
+                                    user.alumni_profile.company else 'N/A' }}</small>
+                            </div>
+                            {% else %}
+                            <span class="text-muted">-</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user.role == 'alumni' and user.alumni_profile %}
+                            {% if not user.alumni_profile.is_verified %}
+                            <a href="{{ url_for('admin.approve_alumni', id=user.alumni_profile.id) }}"
+                                class="btn btn-sm btn-success">Verify</a>
+                            {% else %}
+                            <a href="{{ url_for('admin.revoke_alumni', id=user.alumni_profile.id) }}"
+                                class="btn btn-sm btn-outline-danger">Revoke</a>
+                            {% endif %}
+                            {% endif %}
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

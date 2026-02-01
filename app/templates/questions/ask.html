@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-5">
+                <h2 class="mb-4">Ask a Question</h2>
+                <p class="text-muted mb-4">Submit your question to receive guidance from experienced alumni.</p>
+
+                <form action="{{ url_for('main.ask_question') }}" method="post">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Question Title</label>
+                        <input type="text" class="form-control" id="title" name="title"
+                            placeholder="e.g., How to prepare for Amazon SDE interviews?" required>
+                        <div class="form-text">Keep it clear and concise.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company_id" class="form-label">Target Company (Optional)</label>
+                        <select class="form-select" id="company_id" name="company_id">
+                            <option value="" selected>General / No specific company</option>
+                            {% for company in companies %}
+                            <option value="{{ company.id }}">{{ company.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" name="category">
+                                <option value="Interview">Interview Prep</option>
+                                <option value="Roadmap">Career Roadmap</option>
+                                <option value="Resume">Resume Review</option>
+                                <option value="Company Culture">Company Culture</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="urgency" class="form-label">Urgency</label>
+                            <select class="form-select" id="urgency" name="urgency">
+                                <option value="Normal">Normal</option>
+                                <option value="High">High (Interview soon)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="body" class="form-label">Details</label>
+                        <textarea class="form-control" id="body" name="body" rows="6"
+                            placeholder="Describe your question in detail..." required></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ url_for('main.student_dashboard') }}"
+                            class="btn btn-outline-secondary me-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-4">Submit Question</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

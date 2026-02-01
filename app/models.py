@@ -40,6 +40,7 @@ class Alumni(db.Model):
     current_role = db.Column(db.String(100))
     trust_score = db.Column(db.Integer, default=50)
     is_accepting_questions = db.Column(db.Boolean, default=True)
+    is_verified = db.Column(db.Boolean, default=False)
     responses = db.relationship('Response', backref='mentor', lazy='dynamic')
 
 class Company(db.Model):
@@ -72,3 +73,43 @@ class Response(db.Model):
     body = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     helpful_count = db.Column(db.Integer, default=0)
+    # Relationship to feedback
+    feedback = db.relationship('Feedback', backref='response', uselist=False)
+
+class Feedback(db.Model):
+    """Outcome-based feedback for mentor responses"""
+    id = db.Column(db.Integer, primary_key=True)
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
+    response_id = db.Column(db.Integer, db.ForeignKey('response.id'))
+    student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
+    mentor_id = db.Column(db.Integer, db.ForeignKey('alumni.id'))
+    
+    # Outcome tracking
+    outcome = db.Column(db.String(50)) # 'got_interview', 'got_referral', 'helpful', 'not_helpful'
+    rating = db.Column(db.Integer) # 1-5 stars
+    comment = db.Column(db.Text)
+    
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Referral(db.Model):
+    """Referral request tracking"""
+    id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
+    mentor_id = db.Column(db.Integer, db.ForeignKey('alumni.id'))
+    company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
+    
+    # Request details
+    message = db.Column(db.Text, nullable=False)
+    status = db.Column(db.String(20), default='requested') # 'requested', 'approved', 'rejected', 'completed'
+    
+    # Response from mentor
+    mentor_response = db.Column(db.Text)
+    
+    # Timestamps
+    requested_at = db.Column(db.DateTime, default=datetime.utcnow)
+    responded_at = db.Column(db.DateTime)
+    
+    # Relationships
+    student = db.relationship('Student', backref='referral_requests')
+    mentor = db.relationship('Alumni', backref='referral_requests')
+    company = db.relationship('Company', backref='referrals')

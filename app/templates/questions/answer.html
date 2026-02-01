@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Answer Question - ASCEND{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Answer Question</h1>
+            <a href="{{ url_for('main.mentor_queue') }}" class="btn btn-sm btn-outline">← Back to Queue</a>
+        </div>
+    </div>
+
+    <!-- Question Details -->
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-between align-center">
+                <h2 class="card-title">{{ question.title }}</h2>
+                <div>
+                    <span class="badge badge-{{ 'danger' if question.urgency == 'High' else 'info' }}">
+                        {{ question.urgency }} Priority
+                    </span>
+                    <span class="badge badge-primary">{{ question.category }}</span>
+                </div>
+            </div>
+            <div class="question-meta mt-2">
+                <span>👤 {{ question.student.user.name }}</span>
+                <span>🏢 {{ question.target_company.name }}</span>
+                <span>📅 {{ question.created_at.strftime('%b %d, %Y at %I:%M %p') }}</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="mb-2">Question Details:</h3>
+            <p style="white-space: pre-wrap; line-height: 1.8;">{{ question.body }}</p>
+        </div>
+    </div>
+
+    <!-- Answer Form -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Your Answer</h2>
+            <p class="card-subtitle">Provide a detailed and helpful response</p>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('main.submit_answer', id=question.id) }}">
+                <div class="form-group">
+                    <label class="form-label" for="answer">Your Response *</label>
+                    <textarea class="form-control" id="answer" name="answer" rows="12" required
+                        placeholder="Share your experience, insights, and advice...&#10;&#10;Tips for a great answer:&#10;- Be specific and provide examples&#10;- Share your personal experience&#10;- Include actionable advice&#10;- Be encouraging and supportive"></textarea>
+                    <small class="form-text">You can use markdown formatting for better readability.</small>
+                </div>
+
+                <!-- Markdown Preview (Optional) -->
+                <div class="form-group">
+                    <label class="form-label">Preview</label>
+                    <div id="preview" class="card p-3"
+                        style="min-height: 100px; background-color: var(--bg-secondary);">
+                        <em class="text-secondary">Start typing to see preview...</em>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        ✅ Submit Answer
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tips Card -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">💡 Tips for Great Answers</h3>
+        </div>
+        <div class="card-body">
+            <ul style="line-height: 2;">
+                <li><strong>Be Specific:</strong> Share concrete examples from your experience</li>
+                <li><strong>Be Honest:</strong> Provide realistic expectations about the company/role</li>
+                <li><strong>Be Helpful:</strong> Include resources, links, or next steps</li>
+                <li><strong>Be Encouraging:</strong> Remember you were once in their shoes</li>
+                <li><strong>Be Professional:</strong> Maintain confidentiality about sensitive company info</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Simple markdown preview
+    document.getElementById('answer').addEventListener('input', function (e) {
+        const text = e.target.value;
+        const preview = document.getElementById('preview');
+
+        if (text.trim() === '') {
+            preview.innerHTML = '<em class="text-secondary">Start typing to see preview...</em>';
+            return;
+        }
+
+        // Basic markdown rendering (simplified)
+        let html = text
+            .replace(/\n/g, '<br>')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            .replace(/`(.+?)`/g, '<code>$1</code>');
+
+        preview.innerHTML = html;
+    });
+</script>
+{% endblock %}
